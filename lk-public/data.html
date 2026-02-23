@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Создание тестовых операций</title>
+
+    <!-- Только app-compat и firestore-compat -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Упрощённый конфиг без auth -->
+    <script src="assets/js/firebase-config.js" defer></script>
+
+    <script src="seed-operation-expense.js" defer></script>
+</head>
+<body>
+    <h1>Создать 20 тестовых операций</h1>
+    <button id="seed-btn">Записать операции в Firestore</button>
+    <pre id="log"></pre>
+</body>
+</html>

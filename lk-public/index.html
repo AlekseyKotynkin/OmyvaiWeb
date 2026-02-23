@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Личный кабинет — Чистые Стёкла</title>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/modal.css" />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+
+	<script src="assets/js/firebase-config.js"></script>
+</head>
+<body class="is-preload">
+
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="https://omyvai.ru/" class="logo">Чистые Стёкла</a>
+		</header>
+
+		<!-- Auth / Main -->
+
+		<!-- Простая форма входа (показывается, если пользователь не auth) -->
+		<div id="lkAuth" style="max-width:420px;margin:2rem auto;display:none;">
+			<section class="post">
+				<header class="major">
+					<h2>Вход в личный кабинет</h2>
+					<p>Войдите, чтобы получить доступ к панели управления.</p>
+				</header>
+				<form id="loginForm">
+					<div class="fields">
+						<div class="field">
+							<label for="login-email">Email</label>
+							<input type="email" id="login-email" name="email" required />
+						</div>
+						<div class="field">
+							<label for="login-password">Пароль</label>
+							<input type="password" id="login-password" name="password" required />
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Войти" class="primary"></li>
+						<li><a href="#" id="forgotPasswordLink">Забыли пароль?</a></li>
+						<li><a href="#" id="showSignup">Регистрация</a></li>
+					</ul>
+					  
+				</form>
+
+				<form id="signupForm" style="display:none;">
+					<input type="email" id="signup-email" placeholder="Email" required>
+				  
+					<label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; margin:8px 0;">
+					  <input type="checkbox" id="signup-consent" required>
+					  <span>
+						Я соглашаюсь с условиями
+						<a href="https://omyvai.ru/user-agreement" target="_blank">пользовательского соглашения</a>
+						и
+						<a href="https://omyvai.ru/privacy-policy" target="_blank">политики обработки персональных данных</a>.
+					  </span>
+					</label>
+				  
+					<ul class="actions">
+						<li><input type="submit" value="Зарегистрироваться" class="primary" /></li>
+						<li><a href="#" id="showLogin">Уже есть аккаунт?</a></li>
+					</ul>
+				  </form>
+				  
+				<div id="authMsg" style="display:none;margin-top:10px;"></div>
+			</section>
+		</div>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul><li>&copy; Чистые Стёкла</li><li>2026</li></ul>
+		</div>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/modal.js"></script>
+	<script src="assets/js/lk-index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Бонусная программа OmyVai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Общие стили сайта, путь как в index.html -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #020617;
+      color: #f9fafb;
+    }
+
+    .bonus-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .bonus-header {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .bonus-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    .bonus-subtitle {
+      font-size: 14px;
+      color: #9ca3af;
+      margin: 0;
+    }
+
+    .bonus-section {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 20px 18px;
+      margin-bottom: 18px;
+    }
+
+    .bonus-section h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .bonus-section h3 {
+      margin: 14px 0 6px;
+      font-size: 15px;
+    }
+
+    .bonus-section p {
+      margin: 4px 0 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .bonus-section ul {
+      margin: 4px 0 8px 18px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .bonus-section li {
+      margin-bottom: 4px;
+    }
+
+    .highlight {
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .bonus-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      padding: 18px 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #22c55e;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .steps {
+      counter-reset: step;
+      margin: 6px 0 4px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      counter-increment: step;
+      margin-bottom: 10px;
+      padding-left: 32px;
+      position: relative;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .apps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .app-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .btn-store:hover {
+      border-color: #22c55e;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .btn-store span {
+      font-weight: 500;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #6b7280;
+      text-align: left;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <div class="bonus-wrapper">
+
+    <header class="bonus-header">
+      <h1 class="bonus-title">Бонусная программа OmyVai</h1>
+      <p class="bonus-subtitle">
+        Копите бонусы за мойку автомобиля, отслеживайте баланс в приложении и оплачивайте часть следующих моек.
+      </p>
+    </header>
+
+    <section class="bonus-section">
+      <h2>Как это работает</h2>
+      <p>
+        За каждую оплату услуги на мойках OmyVai вы получаете <span class="highlight">бонусные баллы</span>, которые накапливаются на вашем бонусном счёте в мобильном приложении.
+      </p>
+      <p>
+        Накопленными баллами можно оплатить часть стоимости следующих моек. Конкретный размер начисления и правила использования бонусов зависят от настроек конкретной мойки и действующих акций.
+      </p>
+      <h3>Основные принципы</h3>
+      <ul>
+        <li>Бонусы начисляются за оплаченные услуги на мойках, подключённых к программе OmyVai.</li>
+        <li>Бонусы привязаны к вашему номеру телефона, указанному при регистрации в приложении.</li>
+        <li>Баланс и история начислений всегда доступны в приложении OmyVai в разделе «Бонусы».</li>
+        <li>Часть следующих моек можно оплатить бонусами, остаток оплачивается обычным способом (картой и т.п.).</li>
+      </ul>
+      <p class="note">
+        Точные проценты начисления и максимально возможная доля оплаты бонусами могут отличаться на разных мойках и меняться в рамках акций.
+      </p>
+    </section>
+
+    <div class="bonus-grid">
+      <section class="card">
+        <span class="badge">Регистрация в программе</span>
+        <h2>Как зарегистрироваться</h2>
+        <ol class="steps">
+          <li>
+            Скачайте и установите приложение OmyVai на свой смартфон.
+          </li>
+          <li>
+            Откройте приложение и пройдите быструю регистрацию по номеру телефона.
+          </li>
+          <li>
+            Подтвердите номер с помощью SMS‑кода и заполните простую анкету (имя, e‑mail по желанию).
+          </li>
+          <li>
+            После входа вы автоматически становитесь участником бонусной программы и видите свой бонусный счёт.
+          </li>
+        </ol>
+        <p>
+          Если вы уже пользуетесь мойками OmyVai, просто войдите под тем же номером телефона — бонусы будут копиться на этот аккаунт.
+        </p>
+      </section>
+
+      <section class="card apps">
+        <div>
+          <span class="badge">Скачать приложение</span>
+          <h2>Установка приложения OmyVai</h2>
+          <p>
+            Приложение OmyVai доступно для смартфонов на Android и iOS. Выберите удобный вариант установки:
+          </p>
+        </div>
+
+        <div class="app-links">
+          <!-- TODO: подставить реальные ссылки магазинов -->
+          <a class="btn-store" href="https://play.google.com/store/apps/details?id=YOUR_ANDROID_PACKAGE" target="_blank" rel="noopener">
+            <span>Скачать в Google Play</span>
+          </a>
+
+          <a class="btn-store" href="https://apps.apple.com/ru/app/YOUR_IOS_APP_ID" target="_blank" rel="noopener">
+            <span>Скачать в App Store</span>
+          </a>
+
+          <!-- Если есть прямой APK -->
+          <a class="btn-store" href="https://omyvai.ru/downloads/omyvai-latest.apk" target="_blank" rel="noopener">
+            <span>Скачать APK для Android</span>
+          </a>
+        </div>
+
+        <p class="tagline">
+          После установки просто авторизуйтесь по номеру телефона — все бонусы будут автоматически привязаны к вашему аккаунту.
+        </p>
+      </section>
+    </div>
+
+    <section class="bonus-section">
+      <h2>Начисление и списание бонусов</h2>
+      <h3>Когда начисляются бонусы</h3>
+      <ul>
+        <li>После успешной оплаты услуги на мойке OmyVai через терминал или мобильное приложение.</li>
+        <li>В рамках промо‑акций — за определённое количество моек, за первую мойку нового клиента и т.п.</li>
+      </ul>
+
+      <h3>Как списать бонусы</h3>
+      <ul>
+        <li>При оплате на мойке или в приложении выберите оплату с использованием бонусов.</li>
+        <li>Система автоматически предложит, какую часть суммы можно оплатить бонусами.</li>
+        <li>Оставшаяся часть оплачивается банковской картой или другим доступным способом.</li>
+      </ul>
+
+      <p class="note">
+        Обратите внимание: условия списания (максимальный процент оплаты бонусами за одну операцию, минимальная сумма и т.п.) задаются оператором мойки и могут отличаться на разных объектах.
+      </p>
+    </section>
+
+    <section class="bonus-section">
+      <h2>Частые вопросы</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Нужна ли отдельная пластиковая карта?</div>
+        <div class="faq-a">
+          Нет, участие полностью электронное. Достаточно установленного приложения и авторизации по номеру телефона.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Что делать, если я сменил телефон?</div>
+        <div class="faq-a">
+          Просто установите приложение на новый телефон и войдите под тем же номером — бонусный счёт подтянется автоматически.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Могут ли бонусы сгореть?</div>
+        <div class="faq-a">
+          Срок действия бонусов и правила их сгорания зависят от настроек программы лояльности и могут меняться. Актуальные условия уточняйте на мойке или в службе поддержки.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Где посмотреть текущий баланс?</div>
+        <div class="faq-a">
+          Баланс, история начислений и списаний отображаются в мобильном приложении OmyVai в разделе «Бонусы».
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Информация на этой странице носит общий характер. Точные условия бонусной программы, размеры начислений и возможные ограничения устанавливаются оператором мойки и могут отличаться на разных объектах.
+    </p>
+
+  </div>
+</body>
+</html>

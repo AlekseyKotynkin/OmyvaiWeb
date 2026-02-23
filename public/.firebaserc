@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "omyvai": "omyvai",
+    "default": "omyvai"
+  },
+  "targets": {},
+  "etags": {}
+}
