@@ -1,376 +1,472 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <title>Бонусная программа OmyVai</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<!-- Базовые мета-теги -->
+		<title>Бонусная программа и кэшбэк | Чистые Стёкла</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- SEO мета-теги -->
+		<meta name="description" content="Бонусная программа Чистые Стёкла: копите бонусы за каждую покупку незамерзайки и жидкости, оплачивайте ими до части следующих покупок. Привилегии для постоянных клиентов.">
+		<meta name="keywords" content="бонусная программа, кэшбэк, лояльность, бонусы, скидка на незамерзайку, программа лояльности">
+		<meta name="author" content="Чистые Стекла">
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content="Бонусная программа — Чистые Стёкла">
+		<meta property="og:description" content="Копите бонусы за покупки и экономьте на каждой заправке стеклоомывающей жидкостью.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://omyvai.ru/bonus.html">
+		<meta property="og:image" content="https://omyvai.ru/images/og-image.jpg">
+		
+		<!-- Фавиконки -->
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+		
+		<!-- Каноническая ссылка -->
+		<link rel="canonical" href="https://omyvai.ru/bonus.html">
+		
+		<!-- Стили -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Общие стили сайта, путь как в index.html -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript">
+			(function(m,e,t,r,i,k,a){
+				m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+				m[i].l=1*new Date();
+				for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+				k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+			})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105439265', 'ym');
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #020617;
-      color: #f9fafb;
-    }
+			ym(105439265, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/105439265" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
 
-    .bonus-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
+		<style>
+			.bonus-hero {
+				text-align: center;
+			}
+			.bonus-hero h1 {
+				margin-bottom: 1rem;
+			}
+			.bonus-hero .highlight {
+				color: #00c9a7;
+				font-weight: 700;
+			}
+			.bonus-badges {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			.bonus-badge {
+				min-width: 180px;
+				padding: 0.8rem 1.2rem;
+				border-radius: 999px;
+				border: 1px solid rgba(255,255,255,0.2);
+				font-size: 0.95rem;
+			}
+			.bonus-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+			.bonus-card {
+				background: rgba(255,255,255,0.03);
+				border-radius: 8px;
+				padding: 1.5rem;
+				border: 1px solid rgba(255,255,255,0.08);
+			}
+			.bonus-card h3 {
+				margin-bottom: 0.7rem;
+			}
+			.bonus-steps {
+				counter-reset: step;
+				margin-top: 1rem;
+			}
+			.bonus-step {
+				position: relative;
+				padding-left: 3rem;
+				margin-bottom: 1.2rem;
+			}
+			.bonus-step::before {
+				counter-increment: step;
+				content: counter(step);
+				position: absolute;
+				left: 0;
+				top: 0.1rem;
+				width: 2rem;
+				height: 2rem;
+				border-radius: 50%;
+				background: #00c9a7;
+				color: #1e1e1e;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 700;
+			}
+			.bonus-table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 1rem;
+			}
+			.bonus-table th,
+			.bonus-table td {
+				border: 1px solid rgba(255,255,255,0.1);
+				padding: 0.6rem 0.8rem;
+				text-align: left;
+			}
+			.bonus-table th {
+				background: rgba(255,255,255,0.05);
+			}
+			.bonus-note {
+				font-size: 0.9rem;
+				opacity: 0.85;
+				margin-top: 0.8rem;
+			}
+			.bonus-banner {
+				margin-top: 2rem;
+				padding: 1.2rem 1.5rem;
+				border-radius: 8px;
+				border-left: 4px solid #00c9a7;
+				background: rgba(0, 201, 167, 0.08);
+			}
+			.bonus-banner strong {
+				display: block;
+				margin-bottom: 0.4rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-    .bonus-header {
-      text-align: left;
-      margin-bottom: 24px;
-    }
+		<!-- Wrapper -->
+		<div id="wrapper">
 
-    .bonus-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin: 0 0 8px;
-    }
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Чистые Стёкла</a>
+			</header>
 
-    .bonus-subtitle {
-      font-size: 14px;
-      color: #9ca3af;
-      margin: 0;
-    }
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Автоматы</a></li>
+					<li><a href="generic.html">Жидкости</a></li>
+					<li><a href="elements.html">Оборудование для фасовки</a></li>
+					<li class="active"><a href="bonus.html">Бонусы</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://t.me/KotynkinAlexey" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+					<li><a href="https://wa.me/79398375136" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+				</ul>
+			</nav>
 
-    .bonus-section {
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      padding: 20px 18px;
-      margin-bottom: 18px;
-    }
+			<!-- Main -->
+			<div id="main">
 
-    .bonus-section h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
+				<!-- Hero / Общее описание -->
+				<section class="post bonus-hero">
+					<header class="major">
+						<h1>БОНУСЫ ЗА КАЖДУЮ<br />КАПЛЮ НЕЗАМЕРЗАЙКИ</h1>
+						<p>Заправляйтесь в автоматах «Чистые Стёкла», копите бонусы<br />
+						и снижайте стоимость каждой следующей покупки.</p>
+					</header>
 
-    .bonus-section h3 {
-      margin: 14px 0 6px;
-      font-size: 15px;
-    }
+					<div class="bonus-badges">
+						<div class="bonus-badge"><span class="highlight">5%</span> бонусами с каждой покупки</div>
+						<div class="bonus-badge"><span class="highlight">1 бонус = 1 рубль</span></div>
+						<div class="bonus-badge">Оплата бонусами до <span class="highlight">30%</span> чека</div>
+						<div class="bonus-badge">Бонусы не сгорают при активном использовании</div>
+					</div>
 
-    .bonus-section p {
-      margin: 4px 0 8px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+					<p style="margin-top:2rem;">
+						Чтобы бонусы начислялись, авторизуйтесь в <a href="https://lk.omyvai.ru" target="_blank">Личном кабинете</a> и привяжите карту.
+					</p>
+				</section>
 
-    .bonus-section ul {
-      margin: 4px 0 8px 18px;
-      padding: 0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+				<!-- Как работает программа -->
+				<section class="post">
+					<header>
+						<h2>Как работает бонусная программа</h2>
+					</header>
 
-    .bonus-section li {
-      margin-bottom: 4px;
-    }
+					<div class="bonus-grid">
+						<div class="bonus-card">
+							<h3>1. Регистрируйтесь в Личном кабинете</h3>
+							<p>Создайте аккаунт на <a href="https://lk.omyvai.ru" target="_blank">lk.omyvai.ru</a>. Укажите email и номер телефона, подтвердите согласие с <a href="user-agreement.html" target="_blank">Пользовательским соглашением</a> и <a href="privacy-policy.html" target="_blank">Политикой конфиденциальности</a>.</p>
+						</div>
 
-    .highlight {
-      color: #22c55e;
-      font-weight: 600;
-    }
+						<div class="bonus-card">
+							<h3>2. Привяжите банковскую карту</h3>
+							<p>Оплачивайте покупки в автоматах той же картой, которую использовали при регистрации. По номеру карты система узнает вас и начислит бонусы автоматически.</p>
+						</div>
 
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 16px;
-      margin-bottom: 18px;
-    }
+						<div class="bonus-card">
+							<h3>3. Копите бонусы за каждую покупку</h3>
+							<p>После каждой операции часть суммы возвращается на ваш бонусный счет. Баланс и историю начислений можно посмотреть в личном кабинете.</p>
+						</div>
 
-    @media (max-width: 768px) {
-      .bonus-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+						<div class="bonus-card">
+							<h3>4. Оплачивайте бонусами до 30% чека</h3>
+							<p>При следующих покупках вы сможете списать часть суммы бонусами, а остальное оплатить картой. Так вы экономите на каждой заправке.</p>
+						</div>
+					</div>
 
-    .card {
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 12px;
-      border: 1px solid #1f2937;
-      padding: 18px 16px;
-    }
+					<div class="bonus-banner">
+						<strong>Пример:</strong>
+						<p>Вы купили незамерзайку на 1 000 ₽ — получили 50 бонусов. В следующий раз можете оплатить бонусами до 300 ₽, доплатив остальное картой.</p>
+					</div>
+				</section>
 
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #22c55e;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
+				<!-- Начисление и списание -->
+				<section class="post">
+					<header>
+						<h2>Начисление и списание бонусов</h2>
+					</header>
 
-    .steps {
-      counter-reset: step;
-      margin: 6px 0 4px;
-      padding: 0;
-      list-style: none;
-    }
+					<div class="bonus-grid">
+						<div class="bonus-card">
+							<h3>Сколько бонусов я получаю?</h3>
+							<table class="bonus-table">
+								<thead>
+									<tr>
+										<th>Тип клиента</th>
+										<th>Суммарные покупки за год</th>
+										<th>Начисление бонусов</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Старт</td>
+										<td>до 20 000 ₽</td>
+										<td>5% от суммы покупки</td>
+									</tr>
+									<tr>
+										<td>Партнер</td>
+										<td>20 001–100 000 ₽</td>
+										<td>7% от суммы покупки</td>
+									</tr>
+									<tr>
+										<td>Премиум</td>
+										<td>свыше 100 000 ₽</td>
+										<td>10% от суммы покупки</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="bonus-note">Статус уровня определяется автоматически по сумме оплаченных покупок за последние 12 месяцев.</p>
+						</div>
 
-    .steps li {
-      counter-increment: step;
-      margin-bottom: 10px;
-      padding-left: 32px;
-      position: relative;
-      font-size: 14px;
-      line-height: 1.4;
-    }
+						<div class="bonus-card">
+							<h3>Как списывать бонусы</h3>
+							<div class="bonus-steps">
+								<div class="bonus-step">
+									<p><strong>Выберите объем и способ оплаты</strong><br />На экране автомата укажите объём жидкости и переходите к оплате.</p>
+								</div>
+								<div class="bonus-step">
+									<p><strong>Подтвердите использование бонусов</strong><br />Если бонусы доступны, система предложит использовать их для уменьшения суммы покупки (до 30%).</p>
+								</div>
+								<div class="bonus-step">
+									<p><strong>Оплатите остаток картой</strong><br />Часть суммы спишется бонусами, остальное — с вашей карты. Детали операции будут доступны в личном кабинете.</p>
+								</div>
+							</div>
+							<p class="bonus-note">Бонусы нельзя обменять на наличные. Списание бонусов возможно только при оплате покупок в автоматах «Чистые Стёкла».</p>
+						</div>
+					</div>
+				</section>
 
-    .steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 2px;
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: #22c55e;
-      color: #000;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+				<!-- Условия программы -->
+				<section class="post">
+					<header>
+						<h2>Основные условия бонусной программы</h2>
+					</header>
 
-    .apps {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+					<div class="bonus-grid">
+						<div class="bonus-card">
+							<h3>Срок действия бонусов</h3>
+							<p>Бонусы действуют 12 месяцев с момента начисления. Если в течение 6 месяцев не совершается ни одной покупки, старые бонусы могут быть аннулированы.</p>
+						</div>
 
-    .app-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
+						<div class="bonus-card">
+							<h3>На что начисляются бонусы</h3>
+							<ul>
+								<li>на покупку стеклоомывающей жидкости в автоматах;</li>
+								<li>на покупку некоторых сопутствующих товаров (если доступны на точке);</li>
+								<li>на акции и спецпредложения — размер бонуса может отличаться.</li>
+							</ul>
+						</div>
 
-    .btn-store {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid #334155;
-      background: #020617;
-      color: #e5e7eb;
-      font-size: 13px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
+						<div class="bonus-card">
+							<h3>На что бонусы не начисляются</h3>
+							<ul>
+								<li>на операции по возврату и сторнированию;</li>
+								<li>на комиссии банков и платежных систем;</li>
+								<li>на оплаты, проведенные без авторизации в бонусной программе.</li>
+							</ul>
+						</div>
 
-    .btn-store:hover {
-      border-color: #22c55e;
-      color: #22c55e;
-      background: rgba(34, 197, 94, 0.08);
-    }
+						<div class="bonus-card">
+							<h3>Как посмотреть баланс бонусов</h3>
+							<p>Вся информация по бонусам доступна в личном кабинете:</p>
+							<ul>
+								<li>текущий баланс бонусов;</li>
+								<li>история начислений и списаний;</li>
+								<li>статус клиента и доступные персональные предложения.</li>
+							</ul>
+							<p><a href="https://lk.omyvai.ru" target="_blank">Перейти в Личный кабинет</a></p>
+						</div>
+					</div>
 
-    .btn-store span {
-      font-weight: 500;
-    }
+					<p class="bonus-note">
+						Подробные юридические условия участия в программе закреплены в <a href="user-agreement.html" target="_blank">Пользовательском соглашении</a>.
+					</p>
+				</section>
 
-    .tagline {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
+				<!-- Блок для партнёров -->
+				<section class="post">
+					<header>
+						<h2>Бонусная программа для владельцев автоматов</h2>
+						<p>Увеличивайте лояльность водителей и средний чек с помощью встроенной бонусной системы</p>
+					</header>
 
-    .faq-item {
-      margin-bottom: 10px;
-    }
+					<div class="bonus-grid">
+						<div class="bonus-card">
+							<h3>Что даёт бонусная программа</h3>
+							<ul>
+								<li>стимулирует повторные покупки;</li>
+								<li>увеличивает средний объем заправки;</li>
+								<li>формирует привязанность к конкретной точке;</li>
+								<li>позволяет запускать акции без замены железа.</li>
+							</ul>
+						</div>
 
-    .faq-q {
-      font-weight: 600;
-      margin-bottom: 2px;
-      font-size: 14px;
-    }
+						<div class="bonus-card">
+							<h3>Управление через Личный кабинет</h3>
+							<ul>
+								<li>настройка процента кэшбэка по точкам и группам клиентов;</li>
+								<li>запуск акций (двойные бонусы, бонус за первую покупку и т.п.);</li>
+								<li>аналитика по использованию бонусов и эффективности программы.</li>
+							</ul>
+						</div>
 
-    .faq-a {
-      font-size: 14px;
-      color: #e5e7eb;
-    }
+						<div class="bonus-card">
+							<h3>Хотите подключить бонусы к вашим автоматам?</h3>
+							<p>Оставьте заявку через форму ниже или свяжитесь с нами удобным способом. Мы расскажем, как интегрировать бонусную программу в ваши действующие точки.</p>
+						</div>
+					</div>
+				</section>
 
-    .note {
-      font-size: 12px;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
+			</div>
 
-    .footer-note {
-      margin-top: 18px;
-      font-size: 12px;
-      color: #6b7280;
-      text-align: left;
-    }
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<form id="contactForm" method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="name">ФИО</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Сообщение</label>
+								<textarea name="message" id="message" rows="3"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Отправить" /></li>
+						</ul>
+					</form>
+				</section>
+				<section class="split contact">
+					<section class="alt">
+						<h3>Адрес</h3>
+						<p>248030, РОССИЯ, обл КАЛУЖСКАЯ, г КАЛУГА, <br />
+						ул ТРУДА, ДОМ 4, корпус 2, офис СКЛ. 2</p>
+					</section>
+					<section>
+						<h3>Телефон</h3>
+						<p><a href="tel:+89398375136">8 939 837-51-36</a></p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:info@omyvai.ru">info@omyvai.ru</a></p>
+					</section>
+					<section>
+						<h3>Документы</h3>
+						<p>
+							<a href="privacy-policy.html">Политика конфиденциальности</a><br />
+							<a href="user-agreement.html">Пользовательское соглашение</a>
+						</p>
+					</section>
+					<section>
+						<h3>Мессенжеры</h3>
+						<ul class="icons alt">
+							<li><a href="https://t.me/KotynkinAlexey" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+							<li><a href="https://wa.me/79398375136" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
 
-    a {
-      color: #38bdf8;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
+			<!-- Модальное окно обратной связи -->
+			<div id="feedbackModal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h2>Обратная связь</h2>
+					<form id="telegramForm" method="post">
+						<div class="fields">
+							<div class="field">
+								<label for="modal-name">ФИО</label>
+								<input type="text" name="name" id="modal-name" required />
+							</div>
+							<div class="field">
+								<label for="modal-phone">Телефон</label>
+								<input type="tel" name="phone" id="modal-phone" required />
+							</div>
+							<div class="field">
+								<label for="modal-email">Email</label>
+								<input type="email" name="email" id="modal-email" />
+							</div>
+							<div class="field">
+								<label for="modal-message">Сообщение</label>
+								<textarea name="message" id="modal-message" rows="3" placeholder="Расскажите о вашем проекте или задайте вопрос"></textarea>
+							</div>
+							<div class="field">
+								<input type="checkbox" id="modal-agree" name="agree" required />
+								<label for="modal-agree">
+									Я согласен на обработку персональных данных в соответствии с 
+									<a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a>
+								</label>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Отправить сообщение" /></li>
+						</ul>
+						<div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 4px;"></div>
+					</form>
+				</div>
+			</div>
 
-    a:hover {
-      color: #0ea5e9;
-    }
-  </style>
-</head>
-<body>
-  <div class="bonus-wrapper">
+		</div>
 
-    <header class="bonus-header">
-      <h1 class="bonus-title">Бонусная программа OmyVai</h1>
-      <p class="bonus-subtitle">
-        Копите бонусы за мойку автомобиля, отслеживайте баланс в приложении и оплачивайте часть следующих моек.
-      </p>
-    </header>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/modal.js"></script>
 
-    <section class="bonus-section">
-      <h2>Как это работает</h2>
-      <p>
-        За каждую оплату услуги на мойках OmyVai вы получаете <span class="highlight">бонусные баллы</span>, которые накапливаются на вашем бонусном счёте в мобильном приложении.
-      </p>
-      <p>
-        Накопленными баллами можно оплатить часть стоимости следующих моек. Конкретный размер начисления и правила использования бонусов зависят от настроек конкретной мойки и действующих акций.
-      </p>
-      <h3>Основные принципы</h3>
-      <ul>
-        <li>Бонусы начисляются за оплаченные услуги на мойках, подключённых к программе OmyVai.</li>
-        <li>Бонусы привязаны к вашему номеру телефона, указанному при регистрации в приложении.</li>
-        <li>Баланс и история начислений всегда доступны в приложении OmyVai в разделе «Бонусы».</li>
-        <li>Часть следующих моек можно оплатить бонусами, остаток оплачивается обычным способом (картой и т.п.).</li>
-      </ul>
-      <p class="note">
-        Точные проценты начисления и максимально возможная доля оплаты бонусами могут отличаться на разных мойках и меняться в рамках акций.
-      </p>
-    </section>
-
-    <div class="bonus-grid">
-      <section class="card">
-        <span class="badge">Регистрация в программе</span>
-        <h2>Как зарегистрироваться</h2>
-        <ol class="steps">
-          <li>
-            Скачайте и установите приложение OmyVai на свой смартфон.
-          </li>
-          <li>
-            Откройте приложение и пройдите быструю регистрацию по номеру телефона.
-          </li>
-          <li>
-            Подтвердите номер с помощью SMS‑кода и заполните простую анкету (имя, e‑mail по желанию).
-          </li>
-          <li>
-            После входа вы автоматически становитесь участником бонусной программы и видите свой бонусный счёт.
-          </li>
-        </ol>
-        <p>
-          Если вы уже пользуетесь мойками OmyVai, просто войдите под тем же номером телефона — бонусы будут копиться на этот аккаунт.
-        </p>
-      </section>
-
-      <section class="card apps">
-        <div>
-          <span class="badge">Скачать приложение</span>
-          <h2>Установка приложения OmyVai</h2>
-          <p>
-            Приложение OmyVai доступно для смартфонов на Android и iOS. Выберите удобный вариант установки:
-          </p>
-        </div>
-
-        <div class="app-links">
-          <!-- TODO: подставить реальные ссылки магазинов -->
-          <a class="btn-store" href="https://play.google.com/store/apps/details?id=YOUR_ANDROID_PACKAGE" target="_blank" rel="noopener">
-            <span>Скачать в Google Play</span>
-          </a>
-
-          <a class="btn-store" href="https://apps.apple.com/ru/app/YOUR_IOS_APP_ID" target="_blank" rel="noopener">
-            <span>Скачать в App Store</span>
-          </a>
-
-          <!-- Если есть прямой APK -->
-          <a class="btn-store" href="https://omyvai.ru/downloads/omyvai-latest.apk" target="_blank" rel="noopener">
-            <span>Скачать APK для Android</span>
-          </a>
-        </div>
-
-        <p class="tagline">
-          После установки просто авторизуйтесь по номеру телефона — все бонусы будут автоматически привязаны к вашему аккаунту.
-        </p>
-      </section>
-    </div>
-
-    <section class="bonus-section">
-      <h2>Начисление и списание бонусов</h2>
-      <h3>Когда начисляются бонусы</h3>
-      <ul>
-        <li>После успешной оплаты услуги на мойке OmyVai через терминал или мобильное приложение.</li>
-        <li>В рамках промо‑акций — за определённое количество моек, за первую мойку нового клиента и т.п.</li>
-      </ul>
-
-      <h3>Как списать бонусы</h3>
-      <ul>
-        <li>При оплате на мойке или в приложении выберите оплату с использованием бонусов.</li>
-        <li>Система автоматически предложит, какую часть суммы можно оплатить бонусами.</li>
-        <li>Оставшаяся часть оплачивается банковской картой или другим доступным способом.</li>
-      </ul>
-
-      <p class="note">
-        Обратите внимание: условия списания (максимальный процент оплаты бонусами за одну операцию, минимальная сумма и т.п.) задаются оператором мойки и могут отличаться на разных объектах.
-      </p>
-    </section>
-
-    <section class="bonus-section">
-      <h2>Частые вопросы</h2>
-
-      <div class="faq-item">
-        <div class="faq-q">Нужна ли отдельная пластиковая карта?</div>
-        <div class="faq-a">
-          Нет, участие полностью электронное. Достаточно установленного приложения и авторизации по номеру телефона.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Что делать, если я сменил телефон?</div>
-        <div class="faq-a">
-          Просто установите приложение на новый телефон и войдите под тем же номером — бонусный счёт подтянется автоматически.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Могут ли бонусы сгореть?</div>
-        <div class="faq-a">
-          Срок действия бонусов и правила их сгорания зависят от настроек программы лояльности и могут меняться. Актуальные условия уточняйте на мойке или в службе поддержки.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Где посмотреть текущий баланс?</div>
-        <div class="faq-a">
-          Баланс, история начислений и списаний отображаются в мобильном приложении OmyVai в разделе «Бонусы».
-        </div>
-      </div>
-    </section>
-
-    <p class="footer-note">
-      Информация на этой странице носит общий характер. Точные условия бонусной программы, размеры начислений и возможные ограничения устанавливаются оператором мойки и могут отличаться на разных объектах.
-    </p>
-
-  </div>
-</body>
+	</body>
 </html>

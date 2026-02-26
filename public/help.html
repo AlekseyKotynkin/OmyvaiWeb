@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+		<!-- Базовые мета-теги -->
+		<title>Помощь и FAQ - Инструкции по использованию автоматов | Чистые Стёкла</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- SEO мета-теги -->
+		<meta name="description" content="Инструкции по использованию автоматов незамерзайки. Ответы на частые вопросы, техническая поддержка, руководство пользователя.">
+		<meta name="keywords" content="помощь, инструкция, FAQ, автомат незамерзайки, техподдержка, как пользоваться автоматом">
+		<meta name="author" content="Чистые Стекла">
+		
+		<!-- Open Graph для социальных сетей -->
+		<meta property="og:title" content="Помощь и FAQ - Чистые Стёкла">
+		<meta property="og:description" content="Инструкции и ответы на частые вопросы по использованию автоматов">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://omyvai.ru/help.html">
+		<meta property="og:image" content="https://omyvai.ru/images/og-image.jpg">
+		
+		<!-- Фавиконки -->
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+		
+		<!-- Канонические ссылки -->
+		<link rel="canonical" href="https://omyvai.ru/help.html">
+		
+		<!-- Предзагрузка критических ресурсов -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
+		<link rel="preload" href="assets/js/jquery.min.js" as="script">
+		
+		<!-- Основные стили -->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Schema.org разметка FAQPage -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "Как пользоваться автоматом?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Выберите объем на экране, поднесите карту к терминалу, разместите канистру под краном и дождитесь завершения налива."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Какие способы оплаты доступны?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Принимаются банковские карты (Visa, MasterCard, МИР), Apple Pay, Google Pay, Samsung Pay и СБП."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Что делать, если деньги списались, а жидкость не налилась?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Свяжитесь с технической поддержкой по номеру 8 939 837-51-36 или напишите на info@omyvai.ru. Предоставьте номер транзакции и фото чека."
+					}
+				}
+			]
+		}
+		</script>
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript">
+			(function(m,e,t,r,i,k,a){
+				m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+				m[i].l=1*new Date();
+				for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+				k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+			})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105439265', 'ym');
+
+			ym(105439265, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/105439265" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+		
+		<style>
+			.faq-item {
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.05);
+				border-radius: 8px;
+				border-left: 4px solid #00c9a7;
+			}
+			
+			.faq-item h3 {
+				margin-top: 0;
+				color: #00c9a7;
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			.faq-item h3:hover {
+				color: #00ffcc;
+			}
+			
+			.faq-item .toggle-icon {
+				font-size: 1.2em;
+				transition: transform 0.3s ease;
+			}
+			
+			.faq-item.active .toggle-icon {
+				transform: rotate(180deg);
+			}
+			
+			.faq-answer {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease;
+			}
+			
+			.faq-item.active .faq-answer {
+				max-height: 500px;
+				margin-top: 1rem;
+			}
+			
+			.instruction-step {
+				display: flex;
+				align-items: flex-start;
+				margin-bottom: 1.5rem;
+			}
+			
+			.step-number {
+				background: #00c9a7;
+				color: #1e1e1e;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				flex-shrink: 0;
+				margin-right: 1rem;
+			}
+			
+			.alert-box {
+				background: rgba(255, 193, 7, 0.1);
+				border-left: 4px solid #ffc107;
+				padding: 1rem;
+				margin: 1rem 0;
+				border-radius: 4px;
+			}
+			
+			.info-box {
+				background: rgba(33, 150, 243, 0.1);
+				border-left: 4px solid #2196f3;
+				padding: 1rem;
+				margin: 1rem 0;
+				border-radius: 4px;
+			}
+			
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+			
+			.contact-card {
+				background: rgba(255,255,255,0.05);
+				padding: 1.5rem;
+				border-radius: 8px;
+				text-align: center;
+			}
+			
+			.contact-card i {
+				font-size: 2.5rem;
+				color: #00c9a7;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Чистые Стёкла</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Автоматы</a></li>
+							<li><a href="generic.html">Жидкости</a></li>
+							<li><a href="elements.html">Оборудование для фасовки</a></li>
+							<li class="active"><a href="help.html">Помощь</a></li>
+						</ul>
+						<ul class="icons">
+	        				<li><a href="https://t.me/KotynkinAlexey" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+							<li><a href="https://wa.me/79398375136" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Section -->
+							<section class="post">
+								<header class="major">
+									<h1>ПОМОЩЬ И ПОДДЕРЖКА</h1>
+									<p>Ответы на частые вопросы и инструкции<br />
+									по использованию автоматов «Чистые Стёкла»</p>
+								</header>
+							</section>
+
+						<!-- Инструкция по использованию -->
+							<section class="post">
+								<header>
+									<h2>Как пользоваться автоматом</h2>
+								</header>
+								
+								<div class="instruction-step">
+									<div class="step-number">1</div>
+									<div>
+										<h3>Выберите объем</h3>
+										<p>На сенсорном экране автомата выберите нужный объем жидкости. Доступные варианты обычно включают 1, 2, 3, 4 и 5 литров.</p>
+									</div>
+								</div>
+
+								<div class="instruction-step">
+									<div class="step-number">2</div>
+									<div>
+										<h3>Оплатите покупку</h3>
+										<p>Поднесите банковскую карту или телефон к терминалу оплаты. Поддерживаются все виды бесконтактной оплаты: Visa, MasterCard, МИР, Apple Pay, Google Pay, Samsung Pay и СБП.</p>
+									</div>
+								</div>
+
+								<div class="instruction-step">
+									<div class="step-number">3</div>
+									<div>
+										<h3>Подставьте канистру</h3>
+										<p>Разместите вашу канистру под краном выдачи. Убедитесь, что горловина канистры находится точно под носиком крана.</p>
+									</div>
+								</div>
+
+								<div class="instruction-step">
+									<div class="step-number">4</div>
+									<div>
+										<h3>Получите жидкость</h3>
+										<p>После успешной оплаты автомат начнет налив. Дождитесь окончания процесса — автомат автоматически остановится при достижении выбранного объема.</p>
+									</div>
+								</div>
+
+								<div class="alert-box">
+									<strong>⚠️ Важно:</strong> Не отходите от автомата во время налива. Следите за уровнем жидкости в канистре.
+								</div>
+							</section>
+
+						<!-- FAQ -->
+							<section class="post">
+								<header>
+									<h2>Часто задаваемые вопросы</h2>
+								</header>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Какие способы оплаты принимаются?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Автоматы «Чистые Стёкла» принимают:</p>
+										<ul>
+											<li>Банковские карты (Visa, MasterCard, МИР)</li>
+											<li>Бесконтактную оплату (NFC)</li>
+											<li>Apple Pay, Google Pay, Samsung Pay</li>
+											<li>Систему быстрых платежей (СБП)</li>
+										</ul>
+										<p>Наличные не принимаются.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Что делать, если деньги списались, а жидкость не налилась?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Если произошел сбой:</p>
+										<ol>
+											<li>Не уходите от автомата</li>
+											<li>Сфотографируйте экран и чек (если был выдан)</li>
+											<li>Позвоните на горячую линию: <a href="tel:+79398375136">8 939 837-51-36</a></li>
+											<li>Сообщите номер автомата (указан на корпусе) и номер транзакции</li>
+										</ol>
+										<p>Мы вернем средства на карту в течение 1-3 рабочих дней или произведем повторный налив на месте.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Можно ли использовать свою канистру?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Да, вы можете использовать любую чистую канистру объемом от 1 до 10 литров. Главное требование — горловина должна быть достаточно широкой для размещения под краном автомата.</p>
+										<div class="info-box">
+											<strong>💡 Совет:</strong> Рекомендуем использовать канистры с широкой горловиной (диаметром от 40 мм) для удобства налива.
+										</div>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Как работает автомат в мороз?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Все наши автоматы оснащены системой подогрева и теплоизоляции. Они работают круглосуточно при температуре до -40°C. Жидкость внутри автомата всегда поддерживается при положительной температуре, что гарантирует нормальный налив даже в самые сильные морозы.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Какая температурная стойкость у незамерзайки?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>В наших автоматах представлены следующие типы жидкости:</p>
+										<ul>
+											<li><strong>-10°C</strong> — для межсезонья (осень/весна)</li>
+											<li><strong>-20°C</strong> — для умеренных морозов</li>
+											<li><strong>-30°C</strong> — для холодной зимы</li>
+											<li><strong>-40°C</strong> — для экстремальных температур</li>
+										</ul>
+										<p>Выбирайте жидкость исходя из прогноза погоды в вашем регионе. Для Калужской области оптимальным выбором будет жидкость -20°C или -30°C.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Можно ли смешивать разные незамерзайки?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Смешивание незамерзаек разных производителей не рекомендуется, так как это может привести к:</p>
+										<ul>
+											<li>Снижению температурной стойкости</li>
+											<li>Выпадению осадка</li>
+											<li>Появлению неприятного запаха</li>
+											<li>Ухудшению моющих свойств</li>
+										</ul>
+										<p>Если нужно сменить жидкость, лучше полностью израсходовать старую или промыть систему.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Где находятся ваши автоматы?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Наша сеть автоматов постоянно расширяется. Актуальную карту расположения автоматов вы можете найти:</p>
+										<ul>
+											<li>В личном кабинете на сайте <a href="https://lk.omyvai.ru">lk.omyvai.ru</a></li>
+											<li>В нашем мобильном приложении (скоро)</li>
+											<li>По телефону горячей линии</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Как стать партнером и установить автомат?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Мы всегда открыты к сотрудничеству! Для установки автомата на вашей территории:</p>
+										<ol>
+											<li>Заполните форму обратной связи ниже или позвоните нам</li>
+											<li>Мы проведем анализ локации</li>
+											<li>Предложим оптимальную модель автомата</li>
+											<li>Обсудим условия сотрудничества</li>
+											<li>Произведем установку и запуск</li>
+										</ol>
+										<p>Минимальные требования: наличие электричества (220В), защита от вандализма, проходимость от 50 автомобилей в день.</p>
+									</div>
+								</div>
+
+								<div class="faq-item">
+									<h3 onclick="toggleFaq(this)">
+										Выдается ли чек после покупки?
+										<span class="toggle-icon">▼</span>
+									</h3>
+									<div class="faq-answer">
+										<p>Да, после каждой покупки автомат выдает фискальный чек. Также чек приходит на email, который был привязан к вашей карте, или в виде SMS, если вы указали номер телефона при первой покупке.</p>
+										<p>Чек можно использовать для отчетности или возврата средств в случае сбоя.</p>
+									</div>
+								</div>
+							</section>
+
+						<!-- Техническая поддержка -->
+							<section class="post">
+								<header>
+									<h2>Техническая поддержка</h2>
+									<p>Мы всегда готовы помочь решить любые вопросы</p>
+								</header>
+
+								<div class="contact-grid">
+									<div class="contact-card">
+										<i class="icon solid fa-phone"></i>
+										<h3>Телефон</h3>
+										<p><strong><a href="tel:+79398375136">8 939 837-51-36</a></strong></p>
+										<p>Пн-Вс: 08:00 - 22:00</p>
+									</div>
+
+									<div class="contact-card">
+										<i class="icon solid fa-envelope"></i>
+										<h3>Email</h3>
+										<p><strong><a href="mailto:info@omyvai.ru">info@omyvai.ru</a></strong></p>
+										<p>Ответим в течение 24 часов</p>
+									</div>
+
+									<div class="contact-card">
+										<i class="icon brands fa-telegram"></i>
+										<h3>Telegram</h3>
+										<p><strong><a href="https://t.me/KotynkinAlexey" target="_blank">@KotynkinAlexey</a></strong></p>
+										<p>Быстрая связь онлайн</p>
+									</div>
+
+									<div class="contact-card">
+										<i class="icon brands fa-whatsapp"></i>
+										<h3>WhatsApp</h3>
+										<p><strong><a href="https://wa.me/79398375136" target="_blank">8 939 837-51-36</a></strong></p>
+										<p>Сообщения и звонки</p>
+									</div>
+								</div>
+
+								<div class="info-box" style="margin-top: 2rem;">
+									<strong>📱 Скоро:</strong> Мы разрабатываем мобильное приложение с картой автоматов, историей покупок и программой лояльности!
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form id="contactForm" method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">ФИО</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Сообщение</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Отправить" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Адрес</h3>
+								<p>248030, РОССИЯ, обл КАЛУЖСКАЯ, г КАЛУГА, <br />
+								ул ТРУДА, ДОМ 4, корпус 2, офис СКЛ. 2</p>
+							</section>
+							<section>
+								<h3>Телефон</h3>
+								<p><a href="tel:+89398375136">8 939 837-51-36</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:info@omyvai.ru">info@omyvai.ru</a></p>
+							</section>
+							<section>
+								<h3>Документы</h3>
+								<p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+							</section>
+							<section>
+								<h3>Мессенжеры</h3>
+								<ul class="icons alt">
+	        						<li><a href="https://t.me/KotynkinAlexey" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+	        						<li><a href="https://wa.me/79398375136" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+					<!-- Модальное окно обратной связи -->
+					<div id="feedbackModal" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h2>Обратная связь</h2>
+							<form id="telegramForm" method="post">
+								<div class="fields">
+									<div class="field">
+										<label for="modal-name">ФИО</label>
+										<input type="text" name="name" id="modal-name" required />
+									</div>
+									<div class="field">
+										<label for="modal-phone">Телефон</label>
+										<input type="tel" name="phone" id="modal-phone" required />
+									</div>
+									<div class="field">
+										<label for="modal-email">Email</label>
+										<input type="email" name="email" id="modal-email" />
+									</div>
+									<div class="field">
+										<label for="modal-message">Сообщение</label>
+										<textarea name="message" id="modal-message" rows="3" placeholder="Расскажите о вашем проекте или задайте вопрос"></textarea>
+									</div>
+									<div class="field">
+										<input type="checkbox" id="modal-agree" name="agree" required />
+										<label for="modal-agree">
+											Я согласен на обработку персональных данных в соответствии с 
+											<a href="privacy-policy.html" target="_blank">политикой конфиденциальности</a>
+										</label>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Отправить сообщение" /></li>
+								</ul>
+								<div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 4px;"></div>
+							</form>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/modal.js"></script>
+
+			<script>
+				// Функция для раскрытия/скрытия FAQ
+				function toggleFaq(element) {
+					const faqItem = element.parentElement;
+					const allFaqItems = document.querySelectorAll('.faq-item');
+					
+					// Закрываем все остальные пункты
+					allFaqItems.forEach(item => {
+						if (item !== faqItem) {
+							item.classList.remove('active');
+						}
+					});
+					
+					// Переключаем текущий пункт
+					faqItem.classList.toggle('active');
+				}
+			</script>
+
+	</body>
+</html>
