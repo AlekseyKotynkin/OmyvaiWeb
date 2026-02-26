@@ -4,6 +4,11 @@ Allow: /index.html
 Allow: /generic.html
 Allow: /elements.html
 Allow: /404.html
+Allow: /bonus.html
+Allow: /help.html
+Allow: /iot.html
+Allow: /privacy-policy.html
+Allow: /user-agreement.html
 
 Disallow: /assets/
 Disallow: /images/
@@ -14,7 +19,7 @@ Disallow: /private/
 Sitemap: https://omyvai.ru/sitemap.xml
 
 # Основной хост
-Host: https://omyvai.ru
+Host: omyvai.ru
 
 # Краулерные директивы
 Crawl-delay: 1

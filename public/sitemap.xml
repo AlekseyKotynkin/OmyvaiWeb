@@ -3,43 +3,83 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
+
     <!-- Главная страница -->
     <url>
         <loc>https://omyvai.ru/</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
+
     <!-- Страница автоматов -->
     <url>
         <loc>https://omyvai.ru/index.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <!-- Страница жидкостей -->
     <url>
         <loc>https://omyvai.ru/generic.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
+
     <!-- Страница оборудования -->
     <url>
         <loc>https://omyvai.ru/elements.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Страница 404 (необязательно, но можно включить) -->
+
+    <!-- Страница бонусного приложения / бонусов -->
+    <url>
+        <loc>https://omyvai.ru/bonus.html</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Страница помощи / поддержки -->
+    <url>
+        <loc>https://omyvai.ru/help.html</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Страница IoT / оборудования автоматики -->
+    <url>
+        <loc>https://omyvai.ru/iot.html</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Политика конфиденциальности -->
+    <url>
+        <loc>https://omyvai.ru/privacy-policy.html</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Пользовательское соглашение -->
+    <url>
+        <loc>https://omyvai.ru/user-agreement.html</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Страница 404 -->
     <url>
         <loc>https://omyvai.ru/404.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
