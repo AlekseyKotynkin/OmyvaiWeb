@@ -4,7 +4,6 @@ Allow: /index.html
 Allow: /generic.html
 Allow: /elements.html
 Allow: /404.html
-Allow: /bonus.html
 Allow: /help.html
 Allow: /iot.html
 Allow: /privacy-policy.html

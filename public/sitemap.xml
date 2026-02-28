@@ -36,14 +36,6 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Страница бонусного приложения / бонусов -->
-    <url>
-        <loc>https://omyvai.ru/bonus.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
     <!-- Страница помощи / поддержки -->
     <url>
         <loc>https://omyvai.ru/help.html</loc>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Помощь и FAQ — Чистые Стёкла</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Инструкции по использованию автоматов, ответы на частые вопросы и контакты техподдержки.">
+  <meta name="keywords" content="помощь, FAQ, инструкция, автомат, техподдержка">
+  <link rel="canonical" href="https://my.omyvai.ru/help.html">
+  <link rel="icon" type="image/x-icon" href="https://omyvai.ru/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Помощь и FAQ — Чистые Стёкла">
+  <meta property="og:description" content="Ответы на частые вопросы и инструкции по использованию автоматов">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://my.omyvai.ru/help.html">
+  <meta property="og:image" content="https://my.omyvai.ru/images/hero-support.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Помощь и FAQ — Чистые Стёкла">
+  <meta name="twitter:description" content="Инструкции по использованию автоматов, ответы на частые вопросы и контакты техподдержки.">
+  <meta name="twitter:image" content="https://my.omyvai.ru/images/hero-support.jpg">
+
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Structured data: WebPage + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://my.omyvai.ru/help.html",
+    "name": "Помощь и FAQ — Чистые Стёкла",
+    "description": "Инструкции по использованию автоматов, ответы на частые вопросы и контакты техподдержки.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Чистые Стёкла",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://my.omyvai.ru/images/LogoWithoutBackground.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Стили для FAQ и страницы помощи -->
+  <style>
+    .faq-item {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border-left: 4px solid #00c9a7;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+      color: #00c9a7;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item h3:hover {
+      color: #00ffcc;
+    }
+
+    .faq-item .toggle-icon {
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      margin-top: 1rem;
+    }
+
+    .instruction-step {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step-number {
+      background: #00c9a7;
+      color: #1e1e1e;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .instruction-image {
+      width: 320px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(0, 201, 167, 0.1);
+      border: 2px dashed rgba(0, 201, 167, 0.4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0.5rem;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .instruction-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .alert-box {
+      background: rgba(255, 193, 7, 0.1);
+      border-left: 4px solid #ffc107;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+
+    .info-box {
+      background: rgba(33, 150, 243, 0.1);
+      border-left: 4px solid #2196f3;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .contact-card i {
+      font-size: 2.5rem;
+      color: #00c9a7;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem auto;
+      aspect-ratio: 16 / 9;
+      background: rgba(0, 201, 167, 0.1);
+      border: 2px dashed rgba(0, 201, 167, 0.4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 6px;
+    }
+
+    /* Адаптив для мобильных: инструкции в одну колонку */
+    @media (max-width: 768px) {
+      .instruction-step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+
+      .instruction-image {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="page-inner">
+    <header class="site-header section-fade-in">
+      <div class="logo-block">
+        <a href="https://my.omyvai.ru/index.html">
+          <img src="images/LogoWithoutBackground.png" alt="Чистые Стёкла" class="logo-img">
+        </a>
+      </div>
+      <a href="https://my.omyvai.ru/help.html" class="top-pill">
+        <span class="top-pill-dot"></span>
+        <span>Поддержка 24/7</span>
+      </a>
+    </header>
+
+    <!-- Заголовок -->
+    <section class="section-fade-in">
+      <h1>ПОМОЩЬ И ПОДДЕРЖКА</h1>
+    </section>
+
+    <!-- Инструкции -->
+    <section class="section-fade-in">
+      <h2>Как пользоваться автоматом</h2>
+
+      <div class="instruction-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Выберите тип услуги</h3>
+          <p>На экране автомата выберите нужный тип услуги. Физические кнопки под экраном подсвечиваются тем же цветом, что и выбранные варианты — нажмите подходящую кнопку.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_1.jpg" alt="Шаг 1 — Выберите тип услуги"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Выберите номенклатуру</h3>
+          <p>Уточните, какой именно продукт вам нужен: тип жидкости, сезонность, концентрация или формат выдачи (розлив, канистра и т.д.).</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_2.jpg" alt="Шаг 2 — Выберите номенклатуру"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Укажите объём или сумму</h3>
+          <p>Задайте количество: выберите нужный объём в литрах или введите сумму, на которую хотите заправиться — автомат сам пересчитает второе значение.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_3.jpg" alt="Шаг 3 — Укажите объём или сумму"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Выберите способ оплаты</h3>
+          <p>Поддерживаются банковские карты и бесконтактные платежи, оплата по QR‑коду через СБП, приём наличных, а также оплата накопленными бонусами.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_4.jpg" alt="Шаг 4 — Выберите способ оплаты"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Получите товар</h3>
+          <p>Несколько вариантов выдачи: вставьте шланг прямо в бачок автомобиля, поставьте канистру или другую тару в специальное место для налива, либо просто откройте отсек и заберите уже подготовленную канистру.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_5.jpg" alt="Шаг 5 — Получите товар"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h3>Оставьте отзыв (по желанию)</h3>
+          <p>Если хотите, отсканируйте QR‑код или используйте контакты на экране, чтобы поделиться отзывом о работе автомата.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_6.jpg" alt="Шаг 6 — Оставьте отзыв"></div>
+      </div>
+
+      <div class="instruction-step">
+        <div class="step-number">7</div>
+        <div class="step-content">
+          <h3>Получите бонусы</h3>
+          <p>При оплате через приложение или личный кабинет вам начисляются бонусы, которые можно использовать для скидок на следующие покупки.</p>
+        </div>
+        <div class="instruction-image"><img src="images/step_7.jpg" alt="Шаг 7 — Получите бонусы"></div>
+      </div>
+    </section>
+
+    <!-- Видео инструкция -->
+    <section class="section-fade-in">
+      <h2>Видео инструкция</h2>
+      <p style="text-align: center; margin-bottom: 1rem;">Посмотрите короткое видео о том, как пользоваться автоматом</p>
+      <div class="video-container">
+        <video controls preload="metadata" width="100%" poster="images/LogoWithoutBackground.png">
+          <source src="assets/video/instruction.mp4" type="video/mp4">
+          Ваш браузер не поддерживает встроенное видео. Скачайте файл: <a href="assets/video/instruction.mp4">инструкция (mp4)</a>.
+        </video>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-fade-in">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">Как пользоваться автоматом? <span class="toggle-icon">▼</span></h3>
+        <div class="faq-answer">
+          <p>Выберите объем на экране, поднесите карту к терминалу, разместите канистру под краном и дождитесь завершения налива.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">Какие способы оплаты доступны? <span class="toggle-icon">▼</span></h3>
+        <div class="faq-answer">
+          <p>Принимаются банковские карты (Visa, MasterCard, МИР), Apple Pay, Google Pay, Samsung Pay и СБП.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">Что делать, если деньги списались, а жидкость не налилась? <span class="toggle-icon">▼</span></h3>
+        <div class="faq-answer">
+          <p>Свяжитесь с поддержкой по номеру 8 939 837‑51‑36 или на info@omyvai.ru. Укажите номер транзакции и фото чека.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты поддержки -->
+    <section class="section-fade-in">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="icon fas fa-phone"></i>
+          <h3>Телефон</h3>
+          <p><a href="tel:+79398375136">8 939 837‑51‑36</a><br><small>24/7</small></p>
+        </div>
+        <div class="contact-card">
+          <i class="icon fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:info@omyvai.ru">info@omyvai.ru</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer section-fade-in">
+      <div class="footer-content">
+        <div>© 2026 Чистые Стёкла — 24/7 сервис для водителей</div>
+        <div class="footer-links">
+          <a href="https://omyvai.ru/privacy-policy.html" target="_blank">Политика конфиденциальности</a> •
+          <a href="https://omyvai.ru/user-agreement.html" target="_blank">Пользовательское соглашение</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const allFaqItems = document.querySelectorAll('.faq-item');
+    allFaqItems.forEach(item => {
+      if (item !== faqItem) item.classList.remove('active');
+    });
+    faqItem.classList.toggle('active');
+  }
+</script>
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>

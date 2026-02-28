@@ -5,19 +5,13 @@
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
+        { "source": "**", "destination": "/index.html" }
       ],
       "headers": [
         {
           "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css)",
           "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "max-age=31536000"
-            }
+            { "key": "Cache-Control", "value": "max-age=31536000" }
           ]
         }
       ]
@@ -27,19 +21,48 @@
       "public": "lk-public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
+        { "source": "**", "destination": "/index.html" }
       ],
       "headers": [
         {
           "source": "**",
           "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache, no-store, must-revalidate"
-            }
+            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "my-site",
+      "public": "my-public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        { "source": "**", "destination": "/index.html" }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "fr-site",
+      "public": "fr-public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css)",
+          "headers": [
+            { "key": "Cache-Control", "value": "max-age=31536000" }
+          ]
+        },
+        {
+          "source": "**/*.html",
+          "headers": [
+            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
           ]
         }
       ]

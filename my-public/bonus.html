@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Бонусная программа — Чистые Стёкла</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Копите бонусы за каждую заправку стеклоомывающей жидкости и оплачивайте ими покупки. 1 бонус = 1 рубль, оплата бонусами до 100%.">
+  <meta name="keywords" content="бонусы, кэшбэк, лояльность, стеклоомывайка, программа лояльности">
+  <link rel="canonical" href="https://my.omyvai.ru/bonus.html">
+  <link rel="icon" type="image/x-icon" href="https://omyvai.ru/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Бонусная программа — Чистые Стёкла">
+  <meta property="og:description" content="Заправляйтесь, копите бонусы и снижайте стоимость следующей покупки.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://my.omyvai.ru/bonus.html">
+
+    <meta property="og:image" content="https://my.omyvai.ru/images/hero-bonus.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Бонусная программа — Чистые Стёкла">
+    <meta name="twitter:description" content="Копите бонусы за заправки: 1 бонус = 1 рубль, оплатите до 100% покупки.">
+    <meta name="twitter:image" content="https://my.omyvai.ru/images/hero-bonus.jpg">
+
+  <!-- Стили основной страницы -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js" defer></script>
+
+  <!-- Вспомогательные стили для бонусной страницы -->
+  <style>
+    .bonus-hero {
+      text-align: center;
+    }
+    .bonus-hero h1 {
+      margin-bottom: 1rem;
+    }
+    .bonus-hero .highlight {
+      color: #00c9a7;
+      font-weight: 700;
+    }
+    .bonus-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .bonus-badge {
+      min-width: 180px;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.95rem;
+    }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bonus-card {
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .bonus-card h3 {
+      margin-bottom: 0.7rem;
+    }
+    .bonus-steps {
+      counter-reset: step;
+      margin-top: 1rem;
+    }
+    .bonus-step {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 1.2rem;
+    }
+    .bonus-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #00c9a7;
+      color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .bonus-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .bonus-table th,
+    .bonus-table td {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    .bonus-table th {
+      background: rgba(255,255,255,0.05);
+    }
+    .bonus-note {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-top: 0.8rem;
+    }
+    .bonus-banner {
+      margin-top: 2rem;
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #00c9a7;
+      background: rgba(0, 201, 167, 0.08);
+    }
+    .bonus-banner strong {
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .offer-title h3 {
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+
+    .offer-text .long {
+      margin-top: 0.6rem;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.45;
+    }
+  </style>
+  <!-- Structured data: WebPage + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://my.omyvai.ru/bonus.html",
+    "name": "Бонусная программа — Чистые Стёкла",
+    "description": "Копите бонусы за каждую заправку — 1 бонус = 1 рубль. Оплата бонусами до 100%.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Чистые Стёкла",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://my.omyvai.ru/images/LogoWithoutBackground.png"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+<div class="page">
+  <div class="page-inner">
+    <header class="site-header section-fade-in">
+      <div class="logo-block">
+        <a href="https://my.omyvai.ru/index.html">
+          <img src="images/LogoWithoutBackground.png" alt="Чистые Стёкла" class="logo-img">
+        </a>
+      </div>
+      <a href="https://my.omyvai.ru/help.html" class="top-pill">
+        <span class="top-pill-dot"></span>
+        <span>Поддержка 24/7</span>
+      </a>
+    </header>
+
+    <!-- Hero -->
+    <section class="bonus-hero section-fade-in">
+      <div class="bonus-badges">
+        <div class="bonus-badge">Оплата бонусами до <span class="highlight">100%</span> чека</div>
+        <div class="bonus-badge"><span class="highlight">1 бонус = 1 рубль</span></div>
+        <div class="bonus-badge"><span class="highlight">10%</span> бонусами с каждой покупки</div>
+      </div>
+
+    </section>
+
+        <!-- динамические акции из Firestore -->
+    <section class="section-fade-in" id="offers-section">
+      <h2>Акции и спецпредложения</h2>
+      <div id="offers-container" class="bonus-grid"></div>
+    </section>
+
+    <!-- Разделы -->
+    <section class="section-fade-in">
+        <h2>Как работает бонусная программа</h2>
+
+        <div class="bonus-grid">
+            <div class="bonus-card">
+            <h3>1. Скачайте приложение и зарегистрируйтесь</h3>
+            <p>
+                Установите мобильное приложение «Чистые Стёкла» на смартфон и создайте аккаунт.
+                Укажите номер телефона и email, подтвердите согласие с
+                <a href="user-agreement.html" target="_blank">Пользовательским соглашением</a>
+                и
+                <a href="privacy-policy.html" target="_blank">Политикой конфиденциальности</a>.
+            </p>
+            <p style="margin-top:0.75rem;">
+              <a href="https://www.rustore.ru/catalog/app/com.example.omyvaibonusclient" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">Скачать для Android</a>
+              <span style="margin-left:0.75rem; color: rgba(255,255,255,0.8);">iOS — в разработке</span>
+            </p>
+            </div>
+
+            <div class="bonus-card">
+            <h3>2. Получайте и дарите бонусы</h3>
+            <p>
+                За каждую покупку вам начисляются бонусы: 1&nbsp;рубль = 1&nbsp;бонус.
+                Бонусы можно копить, дарить другим пользователям и получать в рамках акций и спецпредложений.
+            </p>
+            </div>
+
+            <div class="bonus-card">
+            <h3>3. Оплачивайте покупки бонусами</h3>
+            <p>
+                Накопленными бонусами можно оплатить до 100&nbsp;% стоимости заправки или покупки на автомате.
+                Если бонусов не хватает, недостающую часть легко доплатить картой или другим способом.
+            </p>
+            </div>
+        </div>
+
+        <div class="bonus-banner">
+            <strong>Пример:</strong>
+                <p>
+                    Вы заправились незамерзайкой и получили бонусы.
+                    К празднику День водителя можете подарить другу заправку: просто переведите ему бонусы,
+                    и он оплатит свою покупку целиком без денег.
+                </p>
+        </div>
+
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer section-fade-in">
+      <div class="footer-content">
+        <div>© 2026 Чистые Стёкла — 24/7 сервис для водителей</div>
+        <div class="footer-links">
+          <a href="https://omyvai.ru/privacy-policy.html" target="_blank">Политика конфиденциальности</a> •
+          <a href="https://omyvai.ru/user-agreement.html" target="_blank">Пользовательское соглашение</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="assets/js/script.js" defer></script>
+<script src="assets/js/firebase-config.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('offers-container');
+    if (!container || !window.db) return;
+
+    db.collection('special_offers')
+      .where('is_active', '==', true)
+      .orderBy('start_at', 'desc')
+      .get()
+      .then(snapshot => {
+          if (snapshot.empty) {
+              container.innerHTML = '<p>Пока нет активных акций.</p>';
+              return;
+          }
+          snapshot.forEach(doc => {
+              const data = doc.data();
+              const card = document.createElement('div');
+              card.className = 'bonus-card';
+              card.innerHTML = `
+                <div class="offer-title"><h3>${data.title || ''}</h3></div>
+                ${data.image_url ? `<img src="${data.image_url}" alt="${data.title}" style="max-width:100%;border-radius:8px;margin:12px 0;" />` : ''}
+                <div class="offer-text">
+                  <p class="short">${data.short_description || ''}</p>
+                  ${data.long_description ? `<p class="long">${data.long_description}</p>` : ''}
+                </div>
+              `;
+              container.appendChild(card);
+          });
+      })
+      .catch(err => {
+          console.error('Ошибка загрузки акций:', err);
+          container.innerHTML = '<p>Не удалось загрузить акции.</p>';
+      });
+});
+</script>
+</body>
+</html>

@@ -2,769 +2,505 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>Чистые Стёкла — сервис для водителей</title>
+  <title>Чистые Стёкла — круглосуточная заправка стеклоомывайки</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="description" content="Круглосуточная заправка стеклоомывайки: летние антимошки и зимняя незамерзайка, налив в бачок или свою канистру, готовые канистры, бонусы и приложение для водителей.">
+  <meta name="description" content="24/7 заправка стеклоомывайки: летние антимошки, зимняя незамерзайка, налив в бачок, в свою тару или готовые канистры. Оплата картой или бонусами до 100%.">
+  <meta name="keywords" content="стеклоомывайка 24/7, незамерзайка, антимошка, автоматы по продаже, заправка, бонусы">
   <link rel="canonical" href="https://my.omyvai.ru/">
   <link rel="icon" type="image/x-icon" href="https://omyvai.ru/favicon.ico">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Чистые Стёкла — круглосуточная заправка стеклоомывайки">
+  <meta property="og:description" content="Летом и зимой, в бачок или канистру, оплата наличными, картой или бонусами. 24/7 поддержка.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://my.omyvai.ru/">
+  <meta property="og:image" content="https://my.omyvai.ru/images/hero-bonus.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Чистые Стёкла — круглосуточная заправка стеклоомывайки">
+  <meta name="twitter:description" content="Заправляйтесь 24/7: летние и зимние жидкости, оплата картой или бонусами, бронирование и карта автоматов.">
+  <meta name="twitter:image" content="https://my.omyvai.ru/images/hero-bonus.jpg">
 
-  <style>
-    :root {
-      --bg-page: #0096b4;
-      --bg-page-bottom: #006b87;
-      --bg-card-main: #f6f4fb;
-      --card-border: rgba(0,0,0,0.06);
-      --accent: #ff6c3b;
-      --accent-soft: rgba(255,108,59,0.12);
-      --text-main: #1f2933;
-      --text-muted: #6b7280;
-      --radius-lg: 22px;
-      --radius-md: 18px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 12px 30px rgba(0,0,0,0.22);
-      --shadow-card: 0 8px 20px rgba(0,0,0,0.14);
-      --max-width: 960px;
-    }
-
-    * { box-sizing:border-box; margin:0; padding:0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: linear-gradient(180deg, var(--bg-page), var(--bg-page-bottom));
-      color:#fff;
-      min-height:100vh;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    a { color:inherit; text-decoration:none; }
-
-    .page {
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-    }
-
-    .page-inner {
-      width:100%;
-      max-width:var(--max-width);
-      padding:16px 16px 32px;
-    }
-
-    header.site-header {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:12px;
-    }
-
-    .logo-block {
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-    .logo-title {
-      font-size:14px;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      opacity:0.95;
-    }
-    .logo-subtitle {
-      font-size:11px;
-      opacity:0.85;
-    }
-
-    .top-pill {
-      padding:6px 12px;
-      border-radius:var(--radius-pill);
-      background:rgba(0,0,0,0.18);
-      font-size:11px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-    }
-    .top-pill-dot {
-      width:8px;height:8px;border-radius:50%;background:#27d980;
-      position:relative;
-    }
-    .top-pill-dot::after{
-      content:"";
-      position:absolute;
-      inset:-3px;
-      border-radius:inherit;
-      border:1px solid rgba(39,217,128,0.6);
-      opacity:0;
-      animation:pulse 1.8s infinite;
-    }
-    @keyframes pulse{
-      0%{transform:scale(0.6);opacity:0.7;}
-      70%{transform:scale(1.3);opacity:0;}
-      100%{transform:scale(1.3);opacity:0;}
-    }
-
-    /* HERO */
-
-    .hero {
-      margin-top:8px;
-      padding:20px 18px 18px;
-      border-radius:var(--radius-lg);
-      background:linear-gradient(135deg,#fefefe,#f4f5ff);
-      box-shadow:var(--shadow-soft);
-      color:var(--text-main);
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-    .hero::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at 110% -10%,rgba(0,150,180,0.18),transparent 55%);
-      pointer-events:none;
-    }
-    .hero-content{position:relative;z-index:1;max-width:520px;}
-
-    .hero-tagline {
-      font-size:11px;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-      color:#6b7280;
-      margin-bottom:6px;
-    }
-    .hero-title {
-      font-size:24px;
-      line-height:1.25;
-      font-weight:700;
-      margin-bottom:8px;
-    }
-    .hero-subtitle {
-      font-size:13px;
-      color:var(--text-muted);
-      margin-bottom:8px;
-    }
-    .hero-slide-text {
-      font-size:12px;
-      color:var(--text-muted);
-      margin-bottom:14px;
-      min-height:2.4em;
-      transition:opacity .4s ease;
-    }
-
-    .hero-badges {
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-bottom:14px;
-    }
-    .hero-badge {
-      padding:4px 10px;
-      border-radius:var(--radius-pill);
-      background:#edf1ff;
-      font-size:11px;
-      color:#4b5563;
-    }
-
-    .hero-actions {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .hero-illustration-wrapper{
-      position:relative;
-      z-index:1;
-      border-radius:18px;
-      overflow:hidden;
-      min-height:140px;
-      box-shadow:var(--shadow-card);
-    }
-    .hero-illustration{
-      width:100%;
-      height:100%;
-      background-size:cover;
-      background-position:center;
-      transition:opacity .6s ease;
-      position:absolute;
-      inset:0;
-      opacity:0;
-    }
-    .hero-illustration.is-active{
-      opacity:1;
-    }
-
-    .hero-dots{
-      position:absolute;
-      left:10px;
-      bottom:8px;
-      display:flex;
-      gap:4px;
-      z-index:2;
-    }
-    .hero-dot{
-      width:6px;height:6px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.5);
-      transition:transform .2s ease, background .2s ease;
-    }
-    .hero-dot.is-active{
-      background:#ffffff;
-      transform:scale(1.25);
-    }
-
-    .btn {
-      border:none;outline:none;
-      cursor:pointer;
-      font:inherit;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:9px 16px;
-      border-radius:var(--radius-pill);
-      font-size:13px;
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-      white-space:nowrap;
-    }
-    .btn-primary {
-      background:var(--accent);
-      color:#fff;
-      box-shadow:0 8px 18px rgba(255,108,59,0.45);
-    }
-    .btn-primary:active { transform:scale(.97); box-shadow:0 5px 12px rgba(255,108,59,0.35); }
-    @media (hover:hover){
-      .btn-primary:hover{
-        transform:translateY(-1px);
-        box-shadow:0 10px 22px rgba(255,108,59,0.5);
-      }
-    }
-
-    .btn-ghost {
-      background:transparent;
-      border:1px solid rgba(148,163,184,0.55);
-      color:#374151;
-    }
-    .btn-ghost:active { transform:scale(.97); }
-
-    /* SECTIONS */
-
-    section { margin-top:28px; }
-
-    .section-head { margin-bottom:12px; }
-    .section-kicker {
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
-      color:#e5e7eb;
-      opacity:0.9;
-      margin-bottom:4px;
-    }
-    .section-title {
-      font-size:18px;
-      font-weight:600;
-      margin-bottom:4px;
-    }
-    .section-subtitle {
-      font-size:13px;
-      color:#e5e7eb;
-      opacity:0.9;
-      max-width:520px;
-    }
-
-    /* GRID / CARDS */
-
-    .grid { display:grid; gap:12px; }
-
-    @media (min-width:768px){
-      .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
-      .grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
-      .hero{
-        padding:24px 26px 22px;
-        flex-direction:row;
-        align-items:flex-start;
-      }
-      .hero-content{flex:1;margin-right:20px;}
-      .hero-illustration-wrapper{flex:0 0 260px;min-height:190px;margin-top:0;}
-    }
-
-    .card {
-      background:var(--bg-card-main);
-      border-radius:var(--radius-md);
-      border:1px solid var(--card-border);
-      padding:12px 13px 11px;
-      font-size:13px;
-      color:var(--text-main);
-      box-shadow:var(--shadow-card);
-      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .card:hover {
-      transform:translateY(-2px);
-      box-shadow:0 12px 26px rgba(0,0,0,0.2);
-      border-color:rgba(15,23,42,0.12);
-    }
-    .card h3 {
-      font-size:14px;
-      margin-bottom:4px;
-    }
-    .card p {
-      color:var(--text-muted);
-      line-height:1.4;
-    }
-    .pill-label {
-      display:inline-flex;
-      align-items:center;
-      padding:3px 8px;
-      border-radius:var(--radius-pill);
-      background:var(--accent-soft);
-      color:var(--accent);
-      font-size:11px;
-      margin-top:6px;
-    }
-
-    .card-icon{
-      width:32px;
-      height:32px;
-      border-radius:12px;
-      background:rgba(0,150,180,0.08);
-      margin-bottom:6px;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-size:18px 18px;
-    }
-    .card-icon-tank{ background-image:url("images/icon-tank.svg"); }
-    .card-icon-can{ background-image:url("images/icon-can.svg"); }
-    .card-icon-box{ background-image:url("images/icon-box.svg"); }
-
-    /* Steps */
-
-    .steps {
-      background:var(--bg-card-main);
-      border-radius:var(--radius-md);
-      border:1px solid var(--card-border);
-      padding:12px 12px 10px;
-      color:var(--text-main);
-      box-shadow:var(--shadow-card);
-    }
-    .step {
-      display:flex;
-      gap:9px;
-      margin-bottom:9px;
-    }
-    .step-badge {
-      width:22px;height:22px;
-      border-radius:50%;
-      background:#ffffff;
-      border:1px solid rgba(148,163,184,0.6);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:11px;
-      font-weight:600;
-      color:#0f172a;
-    }
-    .step-body-title {
-      font-size:13px;
-      font-weight:500;
-      margin-bottom:2px;
-    }
-    .step-body-text {
-      font-size:12px;
-      color:var(--text-muted);
-    }
-    .note {
-      margin-top:4px;
-      font-size:11px;
-      color:var(--text-muted);
-    }
-
-    /* Support */
-
-    .support {
-      background:var(--bg-card-main);
-      border-radius:var(--radius-md);
-      border:1px solid var(--card-border);
-      padding:13px;
-      display:flex;
-      gap:10px;
-      color:var(--text-main);
-      box-shadow:var(--shadow-card);
-    }
-    .support-icon {
-      width:24px;height:24px;
-      border-radius:50%;
-      background:#e5f3ff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:14px;
-    }
-
-    /* phone mockup */
-
-    .phone-mockup{
-      margin-top:12px;
-      border-radius:28px;
-      background:url("images/app-main.png") top center/cover no-repeat;
-      min-height:240px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.4);
-      border:4px solid #ffffff;
-    }
-    @media(max-width:767px){
-      .phone-mockup{display:none;}
-    }
-
-    footer {
-      margin-top:28px;
-      padding-top:14px;
-      border-top:1px solid rgba(255,255,255,0.3);
-      font-size:11px;
-      color:#e5e7eb;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:space-between;
-      opacity:0.9;
-    }
-
-    /* Анимация появления */
-
-    .section-animated {
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .5s ease, transform .5s ease;
-    }
-    .section-animated.visible {
-      opacity:1;
-      transform:translateY(0);
-    }
-  </style>
+  <!-- Стили -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Structured data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Чистые Стёкла",
+    "url": "https://my.omyvai.ru/",
+    "logo": "https://my.omyvai.ru/images/LogoWithoutBackground.png"
+  }
+  </script>
 </head>
 <body>
 <div class="page">
   <div class="page-inner">
-    <header class="site-header section-animated">
+    
+    <!-- ============ HEADER ============ -->
+    <header class="site-header section-fade-in">
       <div class="logo-block">
-        <div class="logo-title">ЧИСТЫЕ СТЁКЛА</div>
-        <div class="logo-subtitle">Сервис для водителей</div>
+        <!-- Используем изображение логотипа вместо текста -->
+        <a href="https://my.omyvai.ru/index.html">
+          <img src="images/LogoWithoutBackground.png" alt="Чистые Стёкла" class="logo-img">
+        </a>
       </div>
-      <div class="top-pill">
+      <a href="https://my.omyvai.ru/help.html" class="top-pill">
         <span class="top-pill-dot"></span>
         <span>Поддержка 24/7</span>
-      </div>
+      </a>
     </header>
 
-    <!-- HERO -->
-    <section class="hero section-animated">
-      <div class="hero-content">
-        <div class="hero-tagline">КРУГЛОСУТОЧНЫЕ АВТОМАТЫ</div>
-        <h1 class="hero-title">Заправьте стеклоомывайку<br>как вам удобно — летом и зимой</h1>
-        <p class="hero-subtitle">
-          Летние антимошки и зимняя незамерзайка, налив в бачок, в свою канистру или готовые канистры —
-          с оплатой картой или бонусами до 100% стоимости.
-        </p>
-        <p class="hero-slide-text" id="hero-slide-text">
-          Летом — специальные составы против мошек и дорожной грязи для идеальной видимости.
-        </p>
-        <div class="hero-badges">
-          <span class="hero-badge">24/7 • без очередей</span>
-          <span class="hero-badge">Летние и зимние жидкости</span>
-          <span class="hero-badge">Бонусы до 100% чека</span>
-        </div>
-        <div class="hero-actions">
-          <button class="btn btn-primary">Найти ближайший автомат</button>
-          <a href="https://omyvai.ru/bonus.html" target="_blank" class="btn btn-ghost">Подробнее о бонусах</a>
-          <a href="https://omyvai.ru/help.html" target="_blank" class="btn btn-ghost">Помощь и FAQ</a>
+    <!-- ============ 1️⃣ HERO ============ -->
+    <section class="hero section-fade-in">
+      <!-- текстовый блок -->
+      <div class="hero-text-block">
+        <div class="hero-content">
+          <div class="hero-badge-top">Круглосуточные автоматы</div>
+          <h1 class="hero-title">
+            Стеклоомывающая жидкость<br>
+            <span class="highlight">как вам удобно</span> — летом и зимой
+          </h1>
+
+          <!-- динамический лозунг -->
+          <ul class="hero-benefits">
+            <li class="hero-benefit is-active" data-benefit="0">
+              <strong>24/7</strong> — заправка стеклоомывайки в любое время суток
+            </li>
+            <li class="hero-benefit" data-benefit="1">
+              <strong>Летние</strong> и <strong>зимние</strong> жидкости — под сезон и климат
+            </li>
+            <li class="hero-benefit" data-benefit="2">
+              <strong>В бачок</strong> вашего автомобиля, <strong>в тару</strong> или <strong>готовые канистры</strong>
+            </li>
+            <li class="hero-benefit" data-benefit="3">
+              <strong>Бонусы</strong> до 100% покупки — заправляйтесь за накопленные баллы
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div class="hero-illustration-wrapper">
-        <div class="hero-illustration is-active" data-hero-slide="0" style="background-image:url('images/hero-summer.jpg');"></div>
-        <div class="hero-illustration" data-hero-slide="1" style="background-image:url('images/hero-winter.jpg');"></div>
-        <div class="hero-illustration" data-hero-slide="2" style="background-image:url('images/hero-bonus.jpg');"></div>
-        <div class="hero-illustration" data-hero-slide="3" style="background-image:url('images/hero-options.jpg');"></div>
+      <!-- слайдер ниже -->
+      <div class="hero-slider-block">
+        <div class="hero-carousel">
+          <div class="carousel-slides">
+            <div class="slide is-active" data-slide="0"
+                style="background-image: url('images/hero-summer.jpg');">
+            </div>
+            <div class="slide" data-slide="1"
+                style="background-image: url('images/hero-winter.jpg');">
+            </div>
+            <div class="slide" data-slide="2"
+                style="background-image: url('images/hero-bonus.jpg');">
+            </div>
+            <div class="slide" data-slide="3"
+                style="background-image: url('images/hero-options.jpg');">
+            </div>
+          </div>
 
-        <div class="hero-dots">
-          <span class="hero-dot is-active" data-hero-dot="0"></span>
-          <span class="hero-dot" data-hero-dot="1"></span>
-          <span class="hero-dot" data-hero-dot="2"></span>
-          <span class="hero-dot" data-hero-dot="3"></span>
+          <div class="carousel-dots">
+            <button class="dot is-active" data-slide="0" aria-label="Слайд 1"></button>
+            <button class="dot" data-slide="1" aria-label="Слайд 2"></button>
+            <button class="dot" data-slide="2" aria-label="Слайд 3"></button>
+            <button class="dot" data-slide="3" aria-label="Слайд 4"></button>
+          </div>
+
+          <div class="slide-counter">
+            <span class="current">1</span> / 4
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ПРОДУКТ: ЛЕТО/ЗИМА -->
-    <section class="section-animated">
+    <!-- ============ 2️⃣ ВЫБОР ПРОДУКТА ============ -->
+    <section class="products-section section-fade-in">
       <div class="section-head">
-        <div class="section-kicker">Нужный продукт по удобной цене</div>
-        <h2 class="section-title">Летние антимошки и зимняя незамерзайка</h2>
-        <p class="section-subtitle">
-          Выбирайте состав, температурный режим и цену прямо на экране автомата или в приложении — под сезон, климат и свой бюджет.
-        </p>
+        <div class="section-kicker">✨ Выбор продукта</div>
+        <h2 class="section-title">Выбирайте состав, температурный режим и объём прямо на экране автомата или в приложении — под сезон, климат и бюджет.</h2>
       </div>
 
-      <div class="grid grid-cols-3">
-        <article class="card">
-          <h3>Летний режим</h3>
-          <p>Составы против мошек, дорожной пыли и жировой плёнки. Чистое стекло без разводов в тёплое время года.</p>
-          <div class="pill-label">Антимошка • Лето</div>
-        </article>
-        <article class="card">
-          <h3>Зимний режим</h3>
-          <p>Незамерзайка с несколькими температурными режимами: от «города» до трассы и сильных морозов.</p>
-          <div class="pill-label">До −20 / −30 / −40 °C</div>
-        </article>
-        <article class="card">
-          <h3>Прозрачная цена</h3>
-          <p>Всегда видна цена за литр и за выбранный объём. Вы сами решаете, какой состав и по какой цене заливать сегодня.</p>
-          <div class="pill-label">Выбор за вами</div>
-        </article>
+      <!-- Табы: Лето/Зима -->
+      <div class="tabs">
+        <button class="tab-btn is-active" data-tab="summer">☀️ Летние жидкости</button>
+        <button class="tab-btn" data-tab="winter">❄️ Зимние жидкости</button>
+      </div>
+
+      <!-- Содержание табов -->
+      <div class="tab-content">
+        <div id="tab-summer" class="tab-pane is-active">
+          <div class="grid grid-cols-3">
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">🪰</div>
+              <h3>Антимошка</h3>
+              <p>Специальный состав против мошек, мух и насекомых. Отлично моет стекло и оставляет защитное покрытие.</p>
+            </div>
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #87CEEB, #4ECDC4);">🧼</div>
+              <h3>Моющие составы</h3>
+              <p>Удаляет дорожную грязь, пыль и жировую плёнку. Не оставляет разводов на стекле.</p>
+            </div>
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #FF6B6B, #FFE66D);">💨</div>
+              <h3>Экспресс-очистка</h3>
+              <p>Быстрое испарение даже в жару. Идеален для спешки, когда нужен результат за минуту.</p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-winter" class="tab-pane">
+          <div class="grid grid-cols-3">
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #B0E0E6, #4A90E2);">❄️ −20°</div>
+              <h3>Город (−20°C)</h3>
+              <p>Для городских условий и небольших морозов. Оптимально для центральных регионов.</p>
+            </div>
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #1E90FF, #0047AB);">❄️ −30°</div>
+              <h3>Трасса (−30°C)</h3>
+              <p>Для дальних поездок и выраженных морозов. Не загустеет в экстремальных условиях.</p>
+            </div>
+            <div class="product-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, #00008B, #4B0082);">❄️ −40°</div>
+              <h3>Экстрим (−40°C)</h3>
+              <p>Максимальная защита для Сибири и северных регионов. Работает в любой мороз.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefit-banner">
+        <strong>💡 Главное:</strong> Вы сами выбираете состав и температуру под сезон, климат и бюджет — со скидками и бонусами.
       </div>
     </section>
 
-    <!-- ФОРМАТЫ ПОЛУЧЕНИЯ -->
-    <section class="section-animated">
+    <!-- ============ 3️⃣ ФОРМАТЫ ПОЛУЧЕНИЯ ============ -->
+    <section class="formats-section section-fade-in">
       <div class="section-head">
-        <div class="section-kicker">Как получить продукт</div>
+        <div class="section-kicker">🛢️ Как получить</div>
         <h2 class="section-title">Бачок, своя тара или готовые канистры</h2>
-        <p class="section-subtitle">
-          Один сервис закрывает все сценарии: срочно долить стеклоомывайку, набрать в свою канистру или забрать заранее подготовленную тару по пути.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-3">
-        <article class="card">
-          <div class="card-icon card-icon-tank"></div>
-          <h3>Прямо в бачок</h3>
-          <p>Подъехали, открыли капот, выбрали объём и тип жидкости — автомат зальёт стеклоомывайку сразу в бачок.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon card-icon-can"></div>
-          <h3>В свою ёмкость</h3>
-          <p>Наберите ровно столько, сколько нужно, в свою канистру или тару — без переплаты за одноразовый пластик.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon card-icon-box"></div>
-          <h3>Готовые канистры</h3>
-          <p>На части точек можно купить уже разлитые канистры с подходящей летней жидкостью или незамерзайкой и забрать запас с собой.</p>
-        </article>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>Бронирование через приложение</h3>
-        <p>В приложении можно заранее выбрать точку, тип жидкости и объём — автомат «забронирует» ваш заказ, останется только подъехать и забрать.</p>
-      </div>
-    </section>
-
-    <!-- ПРОЦЕСС -->
-    <section class="section-animated">
-      <div class="section-head">
-        <div class="section-kicker">Процесс</div>
-        <h2 class="section-title">Четыре шага за пару минут</h2>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-badge">1</div>
-          <div>
-            <div class="step-body-title">Выберите жидкость и объём</div>
-            <div class="step-body-text">Летняя/зимняя, температуру и нужный объём или формат канистры.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-badge">2</div>
-          <div>
-            <div class="step-body-title">Укажите, куда наливать</div>
-            <div class="step-body-text">В бачок автомобиля, в вашу тару или получение готовой канистры.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-badge">3</div>
-          <div>
-            <div class="step-body-title">Оплатите удобным способом</div>
-            <div class="step-body-text">Карта, телефон или бонусы — если их достаточно, можно оплатить до 100% стоимости.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-badge">4</div>
-          <div>
-            <div class="step-body-title">Подставьте ёмкость и заберите покупку</div>
-            <div class="step-body-text">Автомат выполнит налив, а вы контролируете процесс рядом с машиной.</div>
-          </div>
-        </div>
-        <p class="note">Не отходите от автомата во время налива и следите за уровнем жидкости, чтобы избежать перелива.</p>
-      </div>
-    </section>
-
-    <!-- ОПЛАТА И БОНУСЫ -->
-    <section class="section-animated">
-      <div class="section-head">
-        <div class="section-kicker">Выгода</div>
-        <h2 class="section-title">Оплата и бонусы</h2>
-        <p class="section-subtitle">
-          Платите как удобно — и заправляйтесь за бонусы, которые можно использовать даже на 100% стоимости покупки.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-3">
-        <article class="card">
-          <h3>Оплата</h3>
-          <p>Поддерживаются банковские карты и оплата телефоном/часами. В перспективе — оплата прямо из приложения с привязанной карты.</p>
-        </article>
-        <article class="card">
-          <h3>Бонусы до 100% чека</h3>
-          <p>За каждую заправку начисляются бонусы. 1 бонус = 1 рубль внутри сервиса. Если бонусов достаточно, можно оплатить ими всю покупку.</p>
-        </article>
-        <article class="card" style="background:linear-gradient(135deg,#ffecee,#fff7f0);color:#2b1c1d;">
-          <h3>Приведи друга</h3>
-          <p>Получайте дополнительные бонусы за друзей, которые заправятся в наших автоматах по вашей рекомендации. Подробности — в приложении.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ПРИЛОЖЕНИЕ -->
-    <section class="section-animated">
-      <div class="section-head">
-        <div class="section-kicker">Приложение</div>
-        <h2 class="section-title">Чистые Стёкла в вашем смартфоне</h2>
-        <p class="section-subtitle">
-          Приложение для Android и iOS превращает сеть автоматов в личный сервис: карта, выбор жидкости, бронирование, оплата и бонусы.
-        </p>
+        <p class="section-subtitle">Один сервис закрывает все сценарии — от срочного долива в бачок до бронирования канистры по пути.</p>
       </div>
 
       <div class="grid grid-cols-2">
-        <div class="grid">
-          <article class="card">
-            <h3>Карта автоматов</h3>
-            <p>Видите все автоматы на карте, фильтруете по типу жидкостей и форматам заправки, строите маршрут до нужной точки.</p>
-          </article>
-          <article class="card">
-            <h3>Бронирование и история</h3>
-            <p>Выбирайте продукт и объём заранее, оплачивайте заправку, следите за балансом бонусов и историей операций.</p>
-          </article>
+        <div class="format-card format-card-primary">
+          <div class="format-icon">🚗</div>
+          <h3>Прямо в бачок</h3>
+          <p>Подъехали, открыли капот, выбрали объём и тип жидкости — автомат зальёт стеклоомывайку сразу в бачок. Быстро, удобно, никаких канистр.</p>
+          <ul class="feature-list">
+            <li>⚡ Минимум времени</li>
+            <li>🎯 На месте экономит</li>
+            <li>♻️ Не нужна своя тара</li>
+          </ul>
         </div>
-        <div class="phone-mockup"></div>
+
+        <div class="format-card format-card-primary">
+          <div class="format-icon">🫙</div>
+          <h3>В свою ёмкость</h3>
+          <p>Наберите ровно столько, сколько нужно, в свою канистру или тару — без переплаты за одноразовый пластик. Экономно и экологично.</p>
+          <ul class="feature-list">
+            <li>💰 Меньше переплачиваете</li>
+            <li>🌍 Экологично</li>
+            <li>📦 Любой размер</li>
+          </ul>
+        </div>
+
+        <div class="format-card format-card-secondary">
+          <div class="format-icon">📦</div>
+          <h3>Готовые канистры</h3>
+          <p>На части точек можно купить уже разлитые канистры с нужной жидкостью и забрать запас с собой. Удобно для «про запас».</p>
+          <ul class="feature-list">
+            <li>✌️ Не нужно разливать</li>
+            <li>🏃 Быстро забрать</li>
+            <li>📍 На выбранной точке</li>
+          </ul>
+        </div>
+
+        <div class="format-card format-card-secondary">
+          <div class="format-icon">📱</div>
+          <h3>Бронирование в приложении</h3>
+          <p>Выбраете точку, тип жидкости и объём — автомат вас «ждёт». Вы просто подъезжаете в нужное время и забираете.</p>
+          <ul class="feature-list">
+            <li>⏰ По расписанию</li>
+            <li>🎯 Гарантированно есть</li>
+            <li>🚀 Экономит время</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- ПОДДЕРЖКА -->
-    <section class="section-animated">
+    <!-- ============ 4️⃣ ПРОЦЕСС: 4 ШАГА ============ -->
+    <section class="process-section section-fade-in">
       <div class="section-head">
-        <div class="section-kicker">Помощь</div>
-        <h2 class="section-title">Круглосуточная служба поддержки</h2>
+        <div class="section-kicker">⚙️ Как это работает</div>
+        <h2 class="section-title">Четыре шага за пару минут</h2>
+        <p class="section-subtitle">От выбора жидкости до завершённой заправки</p>
       </div>
 
-      <div class="support">
-        <div class="support-icon">🛟</div>
-        <div>
-          <p>Если деньги списались, а жидкость не налилась, есть вопрос по чеку, бонусам или качеству жидкости — свяжитесь с нами в любое время.</p>
-          <p class="note">
-            Сообщите адрес и номер автомата, время и сумму операции и последние цифры карты — так мы сможем помочь быстрее.
-          </p>
-          <p class="note">
-            Телефон: <a href="tel:+79398375136">8 939 837‑51‑36</a><br>
-            Email: <a href="mailto:info@omyvai.ru">info@omyvai.ru</a><br>
-            Telegram / WhatsApp: 8 939 837‑51‑36
-          </p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Выберите жидкость и объём</h3>
+            <p>На экране автомата выбираете летнюю или зимнюю жидкость, температурный режим (если зима) и нужный объём — в литрах или стандартной канистре.</p>
+          </div>
         </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Выберите, куда наливать</h3>
+            <p>Укажите: в бачок автомобиля, в свою тару, или вы хотите готовую канистру. Автомат покажет цену для вашего выбора.</p>
+          </div>
+        </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Оплатите удобным способом</h3>
+            <p>Картой (contactless), телефоном/часами (NFC), или бонусами — если их достаточно, можно оплатить <strong>до 100% покупки</strong>.</p>
+          </div>
+        </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Получите жидкость</h3>
+            <p>Подставьте ёмкость (или бачок) под носик автомата — он сам регулирует напор и остановится, когда нужно. Заберите чек и канистру (если был такой выбор).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-banner">
+        <strong>⚠️ Важно:</strong> Не отходите от автомата во время налива и следите за уровнем жидкости, чтобы избежать перелива.
       </div>
     </section>
 
-    <footer class="section-animated">
-      <span>© Чистые Стёкла, 2026</span>
-      <span>
-        <a href="https://omyvai.ru/privacy-policy.html" target="_blank">Политика конфиденциальности</a> •
-        <a href="https://omyvai.ru/user-agreement.html" target="_blank">Пользовательское соглашение</a>
-      </span>
+    <!-- ============ 5️⃣ КАРТА И ПОИСК ============ -->
+    <section class="map-section section-fade-in">
+      <div class="section-head">
+        <div class="section-kicker">🗺️ Найдите точку</div>
+        <h2 class="section-title">Автоматы на карте</h2>
+        <p class="section-subtitle">Видите ближайшие точки, доступные жидкости и форматы. Фильтруйте по типу и бронируйте наверняка, что нужное будет ждать вас.</p>
+      </div>
+
+      <div class="map-widget">
+        <div class="map-placeholder" id="map">
+        </div>
+      </div>
+
+      <div class="benefit-banner">
+        <strong>💡 Преимущество:</strong> Вы заранее видите, где нужный вам автомат и какие там доступны варианты — никаких неожиданностей.
+      </div>
+    </section>
+
+    <!-- ============ 6️⃣ ОПЛАТА И БОНУСЫ ============ -->
+    <section class="bonuses-section section-fade-in" id="section-bonuses">
+      <div class="section-head">
+        <div class="section-kicker">💳 Оплата и выгода</div>
+        <h2 class="section-title">Платите как удобно и копите бонусы</h2>
+        <p class="section-subtitle">Каждая покупка — это бонусы, которыми можно оплатить почти любую следующую заправку.</p>
+      </div>
+
+      <div class="grid grid-cols-3">
+        <div class="bonus-card">
+          <div class="card-icon-lg" style="background: linear-gradient(135deg, #667eea, #764ba2);">💳</div>
+          <h3>Оплата</h3>
+          <ul class="feature-list">
+            <li>💰 Банковская карта</li>
+            <li>📱 Телефон/часы (NFC)</li>
+          </ul>
+        </div>
+
+        <div class="bonus-card highlight">
+          <div class="card-icon-lg" style="background: linear-gradient(135deg, #f093fb, #f5576c);">⭐</div>
+          <h3>Бонусы до 100% чека</h3>
+          <ul class="feature-list">
+            <li>1 бонус = 1 рубль</li>
+            <li>✅ Может быть 100% оплата</li>
+            <li><a href="https://my.omyvai.ru/bonus.html" class="link-highlight">Подробнее...</a></li>
+          </ul>
+        </div>
+
+        <div class="bonus-card">
+          <div class="card-icon-lg" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">📊</div>
+          <h3>Личный кабинет</h3>
+          <ul class="feature-list">
+            <li>Баланс бонусов</li>
+            <li>История операций</li>
+            <li>Персональные акции</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="corporate-block">
+        <h3>🏢 Для корпоративных клиентов</h3>
+        <p>Скидки, бонусы и специальные условия для автопарков. Отчётность по водителям и авто, привязка карт к парку — всё для удобства и контроля расходов.</p>
+        <button class="btn btn-secondary" id="btn-corporate-modal">Подробнее о корп. программе</button>
+      </div>
+
+      <div class="benefit-banner">
+        <strong>💡 Суть:</strong> Чем чаще заправляетесь, тем больше бонусов копите — и можете оплатить заправку целиком!
+      </div>
+    </section>
+
+    <!-- ============ 7️⃣ ПРИЛОЖЕНИЕ ============ -->
+    <section class="app-section section-fade-in">
+      <div class="section-head">
+        <div class="section-kicker">📱 Мобильное приложение</div>
+        <h2 class="section-title">Чистые Стёкла в одном смартфоне</h2>
+        <p class="section-subtitle">Приложение для Android и iOS превращает сеть в личный сервис: карта, выбор, бронирование и оплата — всё пара касаний.</p>
+      </div>
+
+      <div class="grid grid-cols-2">
+        <div class="app-features">
+          <div class="feature-item">
+            <div class="feature-number">1</div>
+            <h4>Карта автоматов</h4>
+            <p>Видите все точки, фильтруете по типу жидкости и формату. Строите маршрут до нужной.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">2</div>
+            <h4>Выбор и бронирование</h4>
+            <p>Выбираете жидкость, температуру, объём — бронируете в точке. Автомат вас ждёт.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">3</div>
+            <h4>Оплата из приложения</h4>
+            <p>Оплачивайте прямо из приложения.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">4</div>
+            <h4>Бонусы и история</h4>
+            <p>Баланс бонусов, история всех покупок, чеки, персональные предложения в одном месте.</p>
+          </div>
+        </div>
+
+        <div class="app-mockup">
+          <div class="phone-frame">
+            <div class="phone-content" style="background-image: url('images/app-main.jpg'); background-size: cover;"></div>
+          </div>
+          <p class="app-download">
+            <!-- iOS link temporarily disabled until app is available
+          <a href="https://apps.apple.com/ru/app/your-app-id" 
+              class="btn btn-secondary btn-sm" 
+              target="_blank" rel="noopener noreferrer">
+              iOS
+            </a>
+          -->
+
+            <a href="https://www.rustore.ru/catalog/app/com.example.omyvaibonusclient" 
+              class="btn btn-secondary btn-sm" 
+              target="_blank" rel="noopener noreferrer">
+              Android
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="benefit-banner">
+        <strong>💡 Итог:</strong> Приложение превращает сеть в личный сервис — видите ближайшие точки, выбираете, бронируете и оплачиваете без лишних движений.
+      </div>
+    </section>
+
+    <!-- ============ 8️⃣ КРУГЛОСУТОЧНАЯ ПОДДЕРЖКА ============ -->
+    <section class="support-section section-fade-in" id="section-support">
+      <div class="section-head">
+        <div class="section-kicker">🛟 Помощь и поддержка</div>
+        <h2 class="section-title">Круглосуточная служба поддержки</h2>
+        <p class="section-subtitle">Если что-то пошло не так, у вас есть вопрос — свяжитесь с нами в любое время. Мы разберёмся быстро.</p>
+      </div>
+    
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-icon">📞</div>
+          <h3>Телефон</h3>
+          <p><a href="tel:+79398375136" class="link-highlight">8 939 837-51-36</a><br><small>Доступен 24/7</small></p>
+        </div>
+    
+        <div class="support-card">
+          <div class="support-icon">✈️</div>
+          <h3>Обратная связь</h3>
+          <form id="support-contact-form" class="modal-form">
+            <input type="text" id="support-name" name="name" placeholder="Ваше имя" required>
+            <input type="text" id="support-contact" name="contact" placeholder="Телефон или Telegram" required>
+            <button type="submit" class="btn btn-primary btn-sm">Свяжитесь со мной</button>
+          </form>
+        </div>
+    
+        <div class="support-card">
+          <div class="support-icon">📧</div>
+          <h3>Email</h3>
+          <p><a href="mailto:info@omyvai.ru" class="link-highlight">info@omyvai.ru</a><br><small>Для заявок и счётов</small></p>
+        </div>
+    
+        <div class="support-card">
+          <div class="support-icon">❓</div>
+          <h3>Центр помощи</h3>
+          <p>
+            <a href="https://my.omyvai.ru/help.html" class="link-highlight">Перейти в раздел помощи</a><br>
+            <small>Инструкции, ответы на вопросы</small>
+          </p>
+        </div>
+      </div>
+    
+      <div class="benefit-banner">
+        <strong>💡 Смысл:</strong> За каждым автоматом стоит живая поддержка. Если что-то пошло не так, есть быстрый способ решить вопрос — в любое время суток.
+      </div>
+    </section>
+  
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer section-fade-in">
+      <div class="footer-content">
+        <div>© 2026 Чистые Стёкла — 24/7 сервис для водителей</div>
+        <div class="footer-links">
+          <a href="https://omyvai.ru/privacy-policy.html" target="_blank">Политика конфиденциальности</a> •
+          <a href="https://omyvai.ru/user-agreement.html" target="_blank">Пользовательское соглашение</a>
+        </div>
+      </div>
     </footer>
+
+    <!-- ============ КОРПОРАТИВНЫЙ МОДАЛ ============ -->
+    <div id="corporate-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+        <h2>Индивидуальные условия для корпоративных клиентов</h2>
+        <p>Мы предлагаем специальные условия для компаний и автопарков:</p>
+        <ul class="modal-features">
+          <li>✅ Персонализированные скидки</li>
+          <li>✅ Расширенные программы лояльности</li>
+          <li>✅ Отчётность по водителям и автомобилям</li>
+          <li>✅ Выделенный менеджер</li>
+          <li>✅ Безналичные расчёты</li>
+        </ul>
+        <p style="margin-top: 20px; font-weight: 600;">Оставьте ваши контакты, и наш специалист свяжется с вами в течение 24 часов:</p>
+        <form id="corporate-form" class="modal-form">
+          <input type="text" id="corp-name" name="name" placeholder="Ваше имя" required>
+          <input type="tel" id="corp-phone" name="phone" placeholder="Телефон" required>
+          <button type="submit" class="btn btn-primary btn-lg">Отправить запрос</button>
+        </form>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<script>
-  // анимация появления секций
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+<!-- Yandex Maps API (ключ для JS 3.x) -->
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ab308eaf-3b28-4299-bba6-f130870295da&lang=ru_RU" defer></script>
 
-  document.querySelectorAll('.section-animated').forEach(el => observer.observe(el));
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js" defer></script>
+<script src="assets/js/firebase-config.js" defer></script>
 
-  // лёгкий слайдер в hero
-  const slides = [
-    {
-      text: 'Летом — специальные составы против мошек и дорожной грязи для идеальной видимости.',
-      imgIndex: 0
-    },
-    {
-      text: 'Зимой — незамерзайка с разными температурами: под город, трассу и сильные морозы.',
-      imgIndex: 1
-    },
-    {
-      text: 'Копите бонусы за каждую заправку и при желании оплачивайте до 100% покупки бонусами.',
-      imgIndex: 2
-    },
-    {
-      text: 'Залив в бачок, в свою канистру или готовые канистры — один сервис под любые задачи.',
-      imgIndex: 3
-    }
-  ];
+<!-- Скрипты -->
+<script src="assets/js/script.js" defer></script>
 
-  const slideTextEl = document.getElementById('hero-slide-text');
-  const heroImages = document.querySelectorAll('.hero-illustration');
-  const heroDots = document.querySelectorAll('.hero-dot');
-
-  let currentSlide = 0;
-  const SLIDE_INTERVAL = 5500; // мс
-
-  function applySlide(index) {
-    // текст
-    slideTextEl.style.opacity = 0;
-    setTimeout(() => {
-      slideTextEl.textContent = slides[index].text;
-      slideTextEl.style.opacity = 1;
-    }, 200);
-
-    // картинка
-    heroImages.forEach((img, i) => {
-      img.classList.toggle('is-active', i === slides[index].imgIndex);
-    });
-
-    // точки
-    heroDots.forEach((dot, i) => {
-      dot.classList.toggle('is-active', i === index);
-    });
-
-    currentSlide = index;
-  }
-
-  heroDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = Number(dot.dataset.heroDot);
-      applySlide(idx);
-      restartAutoSlide();
-    });
-  });
-
-  let slideTimer = setInterval(nextSlide, SLIDE_INTERVAL);
-
-  function nextSlide() {
-    const nextIndex = (currentSlide + 1) % slides.length;
-    applySlide(nextIndex);
-  }
-
-  function restartAutoSlide() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(nextSlide, SLIDE_INTERVAL);
-  }
-
-  // небольшая реакция на скролл для hero
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    document.body.classList.toggle('scrolled', y > 40);
-  });
-</script>
 </body>
 </html>
