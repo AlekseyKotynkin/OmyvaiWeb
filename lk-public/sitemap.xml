@@ -4,12 +4,6 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Главная страница лендинга франшизы -->
-  <url>
-    oc>https://fr.omyvai.ru/</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Личный кабинет закрыт для индексации — sitemap намеренно пустой -->
 
 </urlset>

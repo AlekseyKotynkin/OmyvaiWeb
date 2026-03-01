@@ -4,76 +4,60 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- Главная страница -->
-    <url>
-        <loc>https://omyvai.ru/</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <!-- Главная страница -->
+  <url>
+    oc>https://omyvai.ru/</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-    <!-- Страница автоматов -->
-    <url>
-        <loc>https://omyvai.ru/index.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+  <!-- Страница жидкостей -->
+  <url>
+    oc>https://omyvai.ru/generic.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-    <!-- Страница жидкостей -->
-    <url>
-        <loc>https://omyvai.ru/generic.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <!-- Страница оборудования -->
+  <url>
+    oc>https://omyvai.ru/elements.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-    <!-- Страница оборудования -->
-    <url>
-        <loc>https://omyvai.ru/elements.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <!-- Страница IoT / автоматики -->
+  <url>
+    oc>https://omyvai.ru/iot.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-    <!-- Страница помощи / поддержки -->
-    <url>
-        <loc>https://omyvai.ru/help.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+  <!-- Страница помощи / поддержки -->
+  <url>
+    oc>https://omyvai.ru/help.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-    <!-- Страница IoT / оборудования автоматики -->
-    <url>
-        <loc>https://omyvai.ru/iot.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+  <!-- Политика конфиденциальности -->
+  <url>
+    oc>https://omyvai.ru/privacy-policy.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
-    <!-- Политика конфиденциальности -->
-    <url>
-        <loc>https://omyvai.ru/privacy-policy.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Пользовательское соглашение -->
-    <url>
-        <loc>https://omyvai.ru/user-agreement.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Страница 404 -->
-    <url>
-        <loc>https://omyvai.ru/404.html</loc>
-        <lastmod>2026-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.1</priority>
-    </url>
+  <!-- Пользовательское соглашение -->
+  <url>
+    oc>https://omyvai.ru/user-agreement.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>

@@ -3,21 +3,21 @@ Allow: /
 Allow: /index.html
 Allow: /generic.html
 Allow: /elements.html
-Allow: /404.html
 Allow: /help.html
 Allow: /iot.html
 Allow: /privacy-policy.html
 Allow: /user-agreement.html
+Allow: /404.html
 
 Disallow: /assets/
 Disallow: /images/
+Disallow: /docs/
 Disallow: /admin/
 Disallow: /tmp/
 Disallow: /private/
 
 Sitemap: https://omyvai.ru/sitemap.xml
 
-# Основной хост
 Host: omyvai.ru
 
 # Краулерные директивы
@@ -29,9 +29,5 @@ Allow: /
 Crawl-delay: 1
 
 User-agent: Yandex
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
 Allow: /
 Crawl-delay: 1

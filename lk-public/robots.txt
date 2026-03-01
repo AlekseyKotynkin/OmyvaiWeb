@@ -1,0 +1,7 @@
+# Личный кабинет оператора — закрыт для индексации
+User-agent: *
+Disallow: /
+
+Sitemap: https://lk.omyvai.ru/sitemap.xml
+
+Host: lk.omyvai.ru

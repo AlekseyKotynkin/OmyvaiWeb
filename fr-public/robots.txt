@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+
+Disallow: /assets/
+Disallow: /images/
+Disallow: /404.html
 
 Sitemap: https://fr.omyvai.ru/sitemap.xml
+
+Host: fr.omyvai.ru
+
+Crawl-delay: 1

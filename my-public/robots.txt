@@ -1,13 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /bonus.html
+Allow: /help.html
 
-# Разрешаем доступ к статическим ресурсам (чтобы поисковики могли правильно отрисовать страницу)
-# Если понадобятся запреты — перечислите конкретные URL, а не папки целиком.
+Disallow: /assets/
+Disallow: /images/
+Disallow: /404.html
 
 Sitemap: https://my.omyvai.ru/sitemap.xml
 
-# основной хост для этого зеркала
 Host: my.omyvai.ru
 
-# рекомендуемая задержка между запросами (секунды)
 Crawl-delay: 2

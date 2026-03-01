@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Главная страница -->
   <url>
-    <loc>https://my.omyvai.ru/</loc>
-    <lastmod>2026-02-27</lastmod>
-    <changefreq>weekly</changefreq>
+    oc>https://my.omyvai.ru/</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Бонусная программа -->
   <url>
-    <!-- index.html зеркальный путь удалён, каноническая запись — корень -->
-  <url>
-    <loc>https://my.omyvai.ru/bonus.html</loc>
-    <lastmod>2026-02-27</lastmod>
-    <changefreq>monthly</changefreq>
+    oc>https://my.omyvai.ru/bonus.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Помощь -->
   <url>
-    <loc>https://my.omyvai.ru/help.html</loc>
-    <lastmod>2026-02-27</lastmod>
-    <changefreq>monthly</changefreq>
+    oc>https://my.omyvai.ru/help.html</loc>
+    astmod>2026-02-28</lastmod>
+    hangefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
 </urlset>
