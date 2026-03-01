@@ -3,61 +3,46 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Главная страница -->
   <url>
-    oc>https://omyvai.ru/</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>weekly</changefreq>
+    <loc>https://omyvai.ru/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Страница жидкостей -->
   <url>
-    oc>https://omyvai.ru/generic.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
+    <loc>https://omyvai.ru/generic.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Страница оборудования -->
   <url>
-    oc>https://omyvai.ru/elements.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
+    <loc>https://omyvai.ru/elements.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Страница IoT / автоматики -->
   <url>
-    oc>https://omyvai.ru/iot.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
+    <loc>https://omyvai.ru/iot.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Страница помощи / поддержки -->
   <url>
-    oc>https://omyvai.ru/help.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
+    <loc>https://omyvai.ru/help.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Политика конфиденциальности -->
   <url>
-    oc>https://omyvai.ru/privacy-policy.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>yearly</changefreq>
+    <loc>https://omyvai.ru/privacy-policy.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-  <!-- Пользовательское соглашение -->
   <url>
-    oc>https://omyvai.ru/user-agreement.html</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>yearly</changefreq>
+    <loc>https://omyvai.ru/user-agreement.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
 </urlset>

@@ -3,13 +3,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Главная страница лендинга франшизы -->
   <url>
-    oc>https://fr.omyvai.ru/</loc>
-    astmod>2026-02-28</lastmod>
-    hangefreq>monthly</changefreq>
+    <loc>https://fr.omyvai.ru/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
 </urlset>
+
