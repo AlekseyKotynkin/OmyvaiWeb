@@ -8,6 +8,14 @@ Allow: /iot.html
 Allow: /privacy-policy.html
 Allow: /user-agreement.html
 Allow: /404.html
+Allow: /chemistry.html
+Allow: /duet-mix.html
+Allow: /duet-vybor.html
+Allow: /kombo.html
+Allow: /led.html
+Allow: /mini.html
+Allow: /samovydatacha.html
+Allow: /standart.html
 
 Disallow: /assets/
 Disallow: /images/

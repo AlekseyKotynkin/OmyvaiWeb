@@ -249,4 +249,26 @@
 
 		}
 
+		// Tabs: Соло / Дуэт / Мастер
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.tab-link');
+    const sections = document.querySelectorAll('.tab-section');
+
+    // по умолчанию показываем Соло
+    sections.forEach(s => s.classList.remove('active'));
+    const solo = document.getElementById('solo');
+    if (solo) solo.classList.add('active');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+
+            sections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(targetId);
+            if (target) target.classList.add('active');
+        });
+    });
+});
+
 })(jQuery);
